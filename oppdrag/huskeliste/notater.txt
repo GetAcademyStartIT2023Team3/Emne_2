@@ -1,1 +1,42 @@
 En huskeliste applikasjon
+
+Trym:
+    Daglige, ukentlige, månedlige mål
+    Tilleggsting (tasks)
+    Sjekkbokser
+    Generere noen gjøremål for dagen/uken med frister.
+    Gjentagende oppgaver, velge hvor ofte oppgaven skal gjøres.
+    Mulighet til å flytte/utsette. (Gi en sint melding)
+    Måte å se/sjekke om en oppgave er flyttet på(Evt hvor mange ganger)
+    Ukeplan format
+    Mulighet til å flytte oppgaver
+    Etterspørre tilbakemeldinger (varsling fra app om X eller Y er gjort?) 
+    Fast utsettelses tid ut ifra hvilken oppgave det er. (En oppgave kanskje en dag, en annen en uke osv)
+    Maksgrense på gjøremål per dag. Dersom oppgaver overstiger maksgrense, må oppgaver skyves over til neste periode. 
+    Belønnings beskjed etter oppnådd oppgave
+    Minne på oppgaver, struktur for dette. (motivere for å gjøre oppgaver)
+
+Emil:
+    Begrensning på antall oppgaver (maks pr. uke)
+    Mulighet for å utsette oppgave og indikasjon på hvor ofte
+    Dele oppgaver med andre (familie, venner)
+    Sette humørskala på oppg - hvis godt humør gjør, oppg. A, hvis dårlig humør oppg. B etc.
+    Varsling, frister og, estimert gjennomføringstid?
+
+
+
+Markus:
+    Appen bør vise hvor mye man henger bak skjema. Kanskje en fargeskala? ____________     
+    Appen bør se at det kommer en dag der mange frister faller på samme dag og spre oppgavene med lavere prioritet utover flere dager. Det kan være viktig at dette skjer automatisk i bakgrunnen slik at det ikke fører til unødvendig stress som kan gjøre det vanskelig å motivere seg for å gjøre noen av oppgavene.
+    Før man ser listen av oppgaver burde det være mulig å velge humør, hvor utmattet man er, etc. slik at appen kan foreslå å flytte rundt på planen
+
+Ruben:
+    Rollover funksjon for resterende oppgaver som ikke ble fullført denne uka.
+    sinna terje hvis du ikke er flink
+    mye skryt hvis du fullfører oppgaver
+    faste ukentlige oppgaver som alltid blir gjentatt neste uke
+    muligheten til å legge til egne oppgaver utenom de faste
+    mulighet til å endre prioritet på oppgavene
+    sette en maksgrense for antall oppgaver som skal utføres daglig, denne skal man kunne endre etter som man føler man orker mer eller mindre
+    hvis ikke oppgaven har blitt bekreftet fullført, spør om bekreftelse neste dag, hvis ikke fortsett å ha oppgaven tilgjengelig 
+    oppgaver blir tildelt ut fra prioritet men dette kan overstyres

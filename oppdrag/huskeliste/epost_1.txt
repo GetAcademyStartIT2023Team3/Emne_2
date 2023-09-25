@@ -1,0 +1,33 @@
+Hei Marie og takk for hyggelig samtale.
+En huskeliste-app høres spennende ut.
+
+Du ønsker en app som hjelper med å strukturere og lage en plan for hverdagen.
+Her lister vi opp de spesifikke kravene som vi har fått med oss så langt.
+    1. Legge til oppgaver der man kan velge hvor ofte de gjentar.
+    2. Vise bare oppgaver for i dag (men kan velge å vise for flere dager/uker)
+    3. Ulike oppgaver må kunne utsettes med forhåndsvalgt tid. 1 dag, 2 dager, 1 uke etc.
+    4. Se om en oppgave har blitt utsatt/flyttet.
+    5. Utsettelser av oppgave medfører klager fra appen.
+    6. Genere gjøremål for dagen/uken med frister ut ifra et prioriteringsnivå.
+    7. På dager med for mange frister må oppgavene kunne spres utover flere dager. (automatisk?)
+    8. Varsling på gamle oppgaver som ikke er markert som fullført
+    9. Positiv feedback og belønninger for fullføring av oppgaver
+
+For å opprette oppgaver tenker vi at du starter med en enkel skjerm der du kan velge navn på oppgaven. 
+Deretter er det knapper for å legge til funksjonalitet som f.eks:
+    1. Gjenta etter X dager
+    2. Kan bare utføres på visse dager/tidspunkter
+    3. Prioritering av oppgaven
+    4. Vanskelighetsgrad av oppgaven
+    5. Hvor mye tid oppgaven tar
+
+På denne måten kan du lage en enkel oppgave uten å bruke all funksjonaliteten,
+eller legge til så mye du ønsker så du styrer selv hvor komplisert det blir.
+
+Vi fikk med oss at du nevnte noe om en "tilleggsting"?
+Kan du forklare nærmere hva dette er?
+
+
+Med mål, mener du at dette er noe annet enn oppgaver?
+
+Med vennlig hilsen Team 3
