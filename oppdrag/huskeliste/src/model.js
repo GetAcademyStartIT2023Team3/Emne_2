@@ -5,25 +5,25 @@ const model = {
         darkMode: true,
         pushNotifications: false,
     },
-    input: {  //Spør Terje om å utdype hva som faller inn under Input:, litt vanskelig å vite hva som skal med og ikke. eks, isTaskComplete
+
+    input: {
         home: {
             selectedTaskIndex: 4, // valgt task med id 4 - vise detaljser
             //isTaskComplete: true, // sette oppgave som utført
         },
         calendar: {
-            selectedDateIndex: 0
+            selectedDateIndex: 0,
         },
         showTasks: {
-            selectedTaskIndex: 4,
-            //checkbox [X] `<input type="checkbox" onchange="model.tasks[${selectedTaskIndex}]=this.value"`
-            //input for å utsette oppgave, eks. slider eller kalender widget
-            //knapp for å redigere som tar deg til en side for dette.
+            checkTask: 4, // setter task id 4 som complete
+            editTask: 4, // rediger task id 4 -> tar deg til egen side for dette
+            postponeTask: 4, // utsett task id 4
         },
         addTask: {
             name: "Vask kjøkken",
             description: "Hent bøtte og mopp etc..",
-            dateStart: Date(2022, 9, 27),
-            dateEnd: Date(2022, 11, 10),
+            dateStart: "2022-09-1",
+            dateEnd: "2022-09-10",
             estimatedMinutes: 60,
             estimatedExhaustion: 10, //0-10 skala?
             estimatedBoredom: -100,
@@ -31,8 +31,8 @@ const model = {
             subTasks: {},
         },
         settings: {},
- 
     },
+
     //data
     tasks: [
         {
@@ -40,8 +40,8 @@ const model = {
             delayedDays: 0,
             isCompleted: false,
             description: "Veldig støvete", //optional
-            dateStart: Date(2022, 9, 27), //optional
-            dateEnd: Date(2022, 11, 10), //optional
+            dateStart: "2022-09-1",
+            dateEnd: "2022-09-10",
             estimatedMinutes: 60, //optional, if there are subtasks, equal to sum of subtasks.estimatedMinutes
             estimatedBoredom: -100,
             priority: 10,
@@ -58,8 +58,8 @@ const model = {
             delayedDays: 0,
             isCompleted: true,
             description: "Veldig lett",
-            dateStart: Date(2022, 9, 27),
-            dateEnd: Date(2022, 11, 10),
+            dateStart: "2022-09-1",
+            dateEnd: "2022-09-10",
             estimatedMinutes: 5,
             estimatedBoredom: null,
             priority: null,
