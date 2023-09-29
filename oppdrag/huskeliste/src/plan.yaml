@@ -1,0 +1,38 @@
+sider:
+  home:
+    - liste alle oppgaver
+    - minikalender
+    - utvidet info for valgt oppgave
+  
+  calendar:
+    - En stor kalender
+    - Når en dag blir valgt, vises alle oppgaver for dagen
+    - Fargekoding ut ifra hvor mange oppgaver kommer på den dagen
+
+  show tasks:
+    - utvidet visning av oppgaver (rute istedenfor liste)
+    - trykke på en rute:
+      - gir info om oppgave
+      - ferdig med oppgave?
+      - rediger oppgave
+      - utsett oppgave
+  
+  add task:
+    - legge til nye oppgaver
+    valg:
+      - tidsberegning (klokke)
+      - vanskelighetsgrad (arm)
+      - dato (kalender)
+      - kjedelighetsgrad (gjespe-emoticon)
+      - prioritet (utropstegn)
+      - underoppgaver (check-symbol)
+
+  settings:
+    - ..kommer etter hvert
+
+funksjonalitet:
+  autoplanlegge oppgaver for spesifikke datoer:
+    - prioritering
+    - kjedleighetsgrad
+    - vanskelighetsgrad
+  
