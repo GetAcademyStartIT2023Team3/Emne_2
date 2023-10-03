@@ -1,0 +1,36 @@
+Hei Eskil, takk for en hyggelig samtale!
+Det virker spennende å utforske alternative tilnærminger for å presentere emner på Get sin læringsplattform.
+
+
+Her kommer en oversikt over kravene som ble spesifisert under møtet.
+  1. Forbedre måten nøkkelkompetanse-faget blir presentert.
+  2. Lage en måte å se relatert innhold fra forskjellige konsepter på.
+     Et eksempel kan være å vise konsepter under samme kategori som f.eks. “kontrollflyt” for “for-løkke” konseptet.
+  3. Forbedre visningen til tekst, bilder og videoer.
+  4. Brukeren kan kommentere på emner.
+  5. Bruker kan lage sin egen “meny”.
+  6. Strukturert måte å gå gjennom alle eksemplene.
+
+Gi en tilbakemelding på om kravene stemmer.
+
+
+For å få ekstra klarhet i noen småting, så har vi noen ekstra spørsmål.
+  1. Ønsker dere at nettsiden skal føre logg på hvilket fagstoff studenten har fullført?
+  2. Dere nevnte noe om “rating”. Kan dere forklare nærmere hva du mener med dette?
+  3. Skal vi ta hensyn til nøkkelkompetanse-faget når vi lager løsningen, eller vil dere ha en løsning som er generell for alle mulige fag?
+ 
+Det ble snakket mye om “lærestier” og det kan lønne seg å konkretisere dette.
+Her er en liste over vår tolkning av lærestier.
+  1. Fagansvarlig lager lærestier. Innholdet er ulikt for hver sti, men om samme tema.
+  2. Studenten har mulighet til å lage sin egen “sti” basert på hva studenten går igjennom.
+  3. En oversikt over hvor du er i stien, hvor du er på vei og hvor du kommer fra.
+
+I tillegg til vår tolkning av stier, så har vi også et eksempel fra Duolingo.
+Utviklerne av Duolingo er overbevist om at det kan være bedre for læring å ha en lineær sti. Her kan dere lese om begrunnelsen til hvorfor de gikk fra å ha mindre lineære leksjoner til å ha en lineær sti:
+https://blog.duolingo.com/new-duolingo-home-screen-design/
+
+Kan dere komme med konkrete innspill på lærestier?
+
+
+Vi gleder oss til å høre mer fra dere.
+Mvh. Team 3
