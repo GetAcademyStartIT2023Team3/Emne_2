@@ -1,3 +1,7 @@
+-------------------------------------------------------------------------------
+Fra Team 3:
+Oppsummering av kundemøte 02.10.23
+-------------------------------------------------------------------------------
 Hei Eskil, takk for en hyggelig samtale!
 Det virker spennende å utforske alternative tilnærminger for å presentere emner på Get sin læringsplattform.
 
@@ -18,7 +22,7 @@ For å få ekstra klarhet i noen småting, så har vi noen ekstra spørsmål.
   1. Ønsker dere at nettsiden skal føre logg på hvilket fagstoff studenten har fullført?
   2. Dere nevnte noe om “rating”. Kan dere forklare nærmere hva du mener med dette?
   3. Skal vi ta hensyn til nøkkelkompetanse-faget når vi lager løsningen, eller vil dere ha en løsning som er generell for alle mulige fag?
- 
+
 Det ble snakket mye om “lærestier” og det kan lønne seg å konkretisere dette.
 Her er en liste over vår tolkning av lærestier.
   1. Fagansvarlig lager lærestier. Innholdet er ulikt for hver sti, men om samme tema.
@@ -31,6 +35,66 @@ https://blog.duolingo.com/new-duolingo-home-screen-design/
 
 Kan dere komme med konkrete innspill på lærestier?
 
-
 Vi gleder oss til å høre mer fra dere.
 Mvh. Team 3
+
+
+-------------------------------------------------------------------------------
+Fra Eskil (kunde) - (parafrasering)
+-------------------------------------------------------------------------------
+Kjære team3!
+...
+
+De første seks punktene er et drømmebilde(!), vi forstår at det er mye.
+Selve læringsprosessen er en viktig del av dette!
+
+Punktene dere listet opp er først og fremst en ønskeliste, ikke nødvendigvis en krav-spesifikasjon.
+
+  | For å få ekstra klarhet i noen småting...
+  | 1. Ønsker dere at nettsiden skal føre logg på hvilket fagstoff studenten har fullført?
+Ja, gjerne
+
+  | 3. Skal vi ta hensyn til nøkkelkompetanse-faget når vi lager løsningen,
+  |    eller vil dere ha en løsning som er generell for alle mulige fag?
+Gjerne, men først å fremst selve grensesnittet/systemet. Kanskje med noen nøkkelkompetansemner som case?
+
+  | Det ble snakket mye om “lærestier”....
+  | 1. Fagansvarlig lager lærestier. Innholdet er ulikt for hver sti, men om samme tema.
+Jeg har sett for meg en roadmap med bindinger til hverandre.
+Med avhukinger i forhold til hvor man har vært.
+Kanskje vi kan ha en progressbar som viser hvor nye som er gjennomført?
+
+  | 2. Studenten har mulighet til å lage sin egen “sti” basert på hva studenten går igjennom.
+Gjerne, men i utgangspunktet kjører lineært ( som Duolingo).
+Samtidig kommer vi tilbake til temaer...som nå med psykologisk trygghet i emne 2.
+Men herlig om studentene kan gå tilbake til tidligere besøkte "punkter på kartet/ roadmapen"
+
+  | 3. En oversikt over hvor du er i stien, hvor du er på vei og hvor du kommer fra.
+Gjerne!
+
+Beste hilsen
+Eskil
+
+
+-------------------------------------------------------------------------------
+Fra Terje (kunde) - (parafrasering)
+-------------------------------------------------------------------------------
+  | 2. Dere nevnte noe om “rating”. Kan dere forklare nærmere hva du mener med dette?
+Dropp rating i første omgang. Kok det ned for å gjøre ting lettere i starten.
+
+  | For å få ekstra klarhet i noen småting...
+  | 3. Skal vi ta hensyn til nøkkelkompetanse-faget når vi lager løsningen,
+  |    eller vil dere ha en løsning som er generell for alle mulige fag?
+Ja, men det må kunne fylles med alle type innhold (tekst, bilder, video).
+Poenget er navigering + vise sammenheng mellom emner
+
+
+  | 1. Fagansvarlig lager lærestier. Innholdet er ulikt for hver sti, men om samme tema.
+Gjør sånn dere mener er best!
+Jeg tror det er sentralt å kunne navigere rundt på mer enn én måte.
+Kanskje det blir litt på tvers av Duolingo?
+Læring av språk og læring av nøkkelkompetansefaget kan være forskjellig.
+I språk er det ikke noe poeng å lære avanserte ord når du ikke kan de enkle.
+Ønsket er at studenten inspireres til å dykke dypere i lærestoffet.
+
+NB: Eskil er fasit på hva kunden mener.
