@@ -12,11 +12,5 @@ Nøkkelpunkter:
 Læresti:
   - Skal være lineær.
   - Kan vises som en roadmap i et eget lite vindu.
-  - Utformes av fagansvarlig.
   - Student jobber seg stegvis gjennom lærestien.
   - Lærestien skal ha progressbar.
-Historikk:
-  - hvor du er i lærestien
-  - student kan klikke på historikk for å gå til lærestoff
-  - hvor du er i emnet
-  - hvor du er i kurset
