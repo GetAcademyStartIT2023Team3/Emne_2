@@ -1,0 +1,37 @@
+dato: Torsdag 5 okt. 2023
+
+usikkerhet rundt om vi skal designe innhold rundt:
+  - en side for nøkkelkompetanse
+  - alle sider i for hele plattformen
+
+når Eskil underviser:
+  valg for lysbilde fremvisning av innholdet på LMS
+
+notifikasjoner:
+  når det legges til nytt materialle
+  når en oppgave nærmer seg deadlines
+
+læresti:
+  - emner skal kun ha EN læresti
+  - lærestien skal være lineær
+  - progressbar for lærestien (eller evt. for hele emnet)
+  - historikk for å se hva som er gjort i hvert emne
+
+visuell ordsky:
+  - graphviz javascript
+  - tankekart som viser nøkkelord
+  - klikke på ordet tar deg til lærestoff
+  - slider fra uke 1 til 20 -> lyser opp ord som er aktuelle
+
+notater:
+  - mulighet til å skrive notater (forskjellige steder i lærestien?)
+
+Terjes oppsummering: 
+  - kun én sti
+  - navigasjon til relaterte emner
+  - mulig å vise forskjellige konsepter? eksempel, teknikk, metode, begrep, osv
+  - progresjon - hvor langt har du kommet
+  - bruker kan velge "powerpoint"-view eller artikkel hvor ting kommer under med scroll
+  - gjerne recent viewed...
+  - visuell sky av ord hvor man kan klikke å se hva som er relatert (i to steg, direkte og via neste)
+  - kombinere sky med slider hvor man velger uke/posisjon i stien
