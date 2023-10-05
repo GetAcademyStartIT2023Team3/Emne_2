@@ -3,25 +3,20 @@
 # Eposter og notater er lagret i: /oppdrag/inside_get/kundemoete/
 
 
-spesifikasjon:
-  1: Hvert emne har EN roadmap. Dette er en oversikt over alle tema i et emne.
-  2: Hvert emne inneholder flere lærestier.
-  3: Alle lærestier skal ta deg gjennom samme tema i "roadmap" d.v.s. gjennom hoved-temaene i emnet.
-  4: Lærestiene lages/utformes av fagansvarlig.
-  5: Lærestiene viser alle typer innhold bl.annet tekst, bilder og video.
-  6: Historikk over fullført innhold i lærestien.
-
-Oppsummering: >
-  Vi har et LMS - læreplatform som trenger et løft i UX og funksjonalitet.
-  Vi ønsker en bedre måte å "strukturere" lærestoffet på ved å bruke "lærestier".
-  Vi ønsker at studenten skal inspireres til å dykke dypere i lærestoffet.
-  Læringsprosessen er en viktig del av dette.
-  Bruke gjerne nøkkelkompetansemner som utgangspunkt.
-  Vi vil at dere skal ha selve grensesnittet/systemet i bakhodet når dere jobber.
-
-nøkkelord:
-  Roadmap: Oversikt over alle tema som ingår i et emne.
-  Læresti: Et av flere lineære læreforløp under et emnt. Student velger en for å fullføre et emne.
-  LMS: Forkortelse av "learning management system" (online lærings-plattform).
-  Historikk: En progressbar (eller sjekkpunkter etc.) over fullførte objekter.
-  UX: Brukergrensesnitt.
+Nøkkelpunkter:
+  - Hvert emne har en definert læresti som fagansvarlig oppretter.
+  - Hvert emne kan inneholde en graphviz "Ordsky". https://graphviz.org/gallery/
+  - Hvert emne kan presentere lærestoff i "power-point" modus.
+  - Navigere i historikk over fullførte objekter.
+  - Notifikasjoner (når det legges til nytt materialle, eller oppgave nærmer seg deadline).
+Læresti:
+  - Skal være lineær.
+  - Kan vises som en roadmap i et eget lite vindu.
+  - Utformes av fagansvarlig.
+  - Student jobber seg stegvis gjennom lærestien.
+  - Lærestien skal ha progressbar.
+Historikk:
+  - hvor du er i lærestien
+  - student kan klikke på historikk for å gå til lærestoff
+  - hvor du er i emnet
+  - hvor du er i kurset
