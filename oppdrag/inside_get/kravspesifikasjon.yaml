@@ -4,13 +4,9 @@
 
 
 Nøkkelpunkter:
-  - En enkelt sti som innholder alle emnene på ukentlig progresjon som fagansvarlig oppretter.
-  - Hvert emne kan inneholde en graphviz "Ordsky". https://graphviz.org/gallery/
-  - Hvert emne kan presentere lærestoff i "power-point" modus.
+  - En enkel sti som inneholder alle emnene på ukentlig progresjon som fagansvarlig oppretter.
   - Navigere i historikk over fullførte objekter.
-  - Notifikasjoner (når det legges til nytt materialle, eller oppgave nærmer seg deadline).
-Læresti:
-  - Skal være lineær.
-  - Kan vises som en roadmap i et eget lite vindu.
-  - Student jobber seg stegvis gjennom lærestien.
-  - Lærestien skal ha progressbar.
+  - Notifikasjoner (når det legges til nytt materiale, eller oppgave nærmer seg deadline).
+  - Visning: Klikke seg gjennom (tenk powerpoint) eller scrolle seg nedover
+  - Inneholde en ordsky/nettverk over relaterte konsepter
+  - Vise lærestoff på flere måter
