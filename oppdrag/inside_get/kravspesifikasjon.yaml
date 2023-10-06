@@ -4,7 +4,7 @@
 
 
 Nøkkelpunkter:
-  - Hvert emne har en definert læresti som fagansvarlig oppretter.
+  - En enkelt sti som innholder alle emnene på ukentlig progresjon som fagansvarlig oppretter.
   - Hvert emne kan inneholde en graphviz "Ordsky". https://graphviz.org/gallery/
   - Hvert emne kan presentere lærestoff i "power-point" modus.
   - Navigere i historikk over fullførte objekter.
