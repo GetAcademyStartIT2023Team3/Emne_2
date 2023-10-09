@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        #app {
+            height: auto;
+            background: #11191f;
+            color: #BBC6CE;
+        }
+        .presentation {
+            height: 500px;
+        }
+        .article {
+            height: auto;
+        }
+        .body {
+            padding: 50px;
+            background: #141E26;
+            margin-left: auto;
+            margin-right:auto;
+            max-width: 1000px;
+            display: flex;
+            flex-direction: column;
+        }
+        img {
+            overflow: auto;
+            max-width: 100%;
+            max-height: 250px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            object-position: top left;
+        }
+        .horizontal {
+            display: flex;
+            justify-content: center;
+        }
+        a {
+            color: #1095C1;
+        }
+        p {
+            font-size: 17px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div id="app"></div>
+    <script>
+        "use strict";
+
+        //Model
+        let model = {
+            app: {
+                selectedPage: "articles"
+            },
+            pages: {
+                articlePage: {
+                    isPresenting: false,
+                    subjectIndex: 1,
+                    selectedPage: 1,
+                    selectedArticle: 1 
+                }
+            },
+            subjects: [
+                {subjectID: 1, name:"Javascript"},
+                {subjectID: 2, name:"Nøkkelkompetanse"},
+             ],
+            articles: [
+                 {articleID: 1, subjectID: 1, atoms: [1,3,2,4]},
+                 {articleID: 2, subjectID: 1, atoms: [5,2,2,7,2]},
+            ],
+             presentations: [
+                 {articleID: 1, subjectID: 1, pages: [[6,8,2],[3,2],[9]]},
+                 {articleID: 2, subjectID: 1, pages: [[5,7],[8,9]]},
+            ],
+            atoms: [
+               {id: 1, subjectIDs: [2], converter: convertMarkdown, details: "# Dette er en artikkel.\n Her kommer alt innholdet nedover."},
+               {id: 2, subjectIDs: [1], converter: convertImage,    details: "https://getacademy.no/hubfs/GET_RGB_logo-01-2.png"},
+               {id: 3, subjectIDs: [2], converter: convertYoutube,  details: "dHRQLHaC86c"},
+               {id: 4, subjectIDs: [1], converter: convertMarkdown, details: "Denne videoen forklarer mye"},
+               {id: 5, subjectIDs: [1,2], converter: convertMarkdown, details: "Blablabla"},
+               {id: 6, subjectIDs: [1], converter: convertMarkdown, details: "Dette er en presentasjon. Her er det fordelt på flere sider."},
+               {id: 7, subjectIDs: [2], converter: convertMarkdown, details: "..."},
+               {id: 8, subjectIDs: [1], converter: convertMarkdown, details: "..."},
+               {id: 9, subjectIDs: [2], converter: convertMarkdown, details: "..."},
+            ]
+        }
+
+        function convertMarkdown(details) {
+            let html = "";
+            for(const line of details.split("\n")) {
+                let pre_after = line.split(/\s(.+)/);
+                if(pre_after[0] == "#") html += /*html*/`<h3>${pre_after[1]}</h3>`;
+                else html += html += /*html*/`<p>${line}</p>`;
+            }
+            return html;
+        }
+
+        function convertImage(details) {
+            return /*html*/`<img src="${details}"/>`
+        }
+
+        function convertYoutube(details) {
+            return /*html*/`
+            <iframe height="560" width="315px" src="https://www.youtube.com/embed/${details}" frameborder="0" allow="picture-in-picture;" allowfullscreen></iframe>
+            `
+        }
+
+        
+        //View
+        updateView();
+        function updateView() {
+            let app = document.getElementById("app");
+            let html = "";
+            html += /*html*/`
+                <div class = "horizontal">
+                    <a href="javascript:model.pages.articlePage.selectedArticle=2; updateView();">Articles</a>
+                    &nbsp;|&nbsp; 
+                    Toggle present-mode: <input type="checkbox" onclick="toggleMode()" />
+                </div>
+                ${articleView()}
+            `;
+            app.innerHTML = html;
+        }
+
+        function articleView() {
+            let html = "";
+            let pages = [];
+            if(model.pages.articlePage.isPresenting) {
+                html += /*html*/`<div class ="presentation body">`;
+                for(const p of model.presentations) if(p.articleID == model.pages.articlePage.selectedArticle) {
+                    pages = p.pages;
+                    break;
+                }
+            } else {
+                html += /*html*/`<div class ="article body">`;
+                for(const a of model.articles) if(a.articleID == model.pages.articlePage.selectedArticle) {
+                    pages.push(a.atoms);
+                    break;
+                }
+            };
+
+            for(const atomId of pages[model.pages.articlePage.selectedPage-1]) for(const atom of model.atoms) if(atom.id == atomId) {
+                html += atom.converter(atom.details);
+            }
+            html += /*html*/`</div>`;
+
+            if(pages.length > 1) {
+                html += /*html*/`<div class="horizontal">`
+                for(let i = 0; i < pages.length; i++) {
+                    html += /*html*/`<button onclick="changePage(${i+1})">${i+1}</button>`;
+                }
+                html += /*html*/`</div>`
+            }
+            return html;
+        }
+
+        //Controller
+        function toggleMode() {
+            model.pages.articlePage.isPresenting = !model.pages.articlePage.isPresenting;
+            updateView();
+        }
+
+        function changePage(id) {
+            model.pages.articlePage.selectedPage = id;
+            updateView();
+        }
+    </script>
+</body>
+</html>
