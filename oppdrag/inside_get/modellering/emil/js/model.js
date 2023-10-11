@@ -76,7 +76,7 @@ const model = {
     ],
     artikler: [ // flere atomer under en artikkel, legg til disse i atomer: []
          { id: 1, name: 'for løkker',    atomer: [1, 3, 2, 4, 5] },
-         { id: 2, name: 'while løkker',  atomer: [6, 12, 7] },
+         { id: 2, name: 'while løkker',  atomer: [6, 12, 7, 13] },
          { id: 3, name: 'Aktiv lytting', atomer: [11, 12] },
          { id: 4, name: 'Variabler',     atomer: [8, 9, 10] },
     ],
@@ -93,6 +93,7 @@ const model = {
        { id: 10, type: 'code',       atom: { title: 'Kodetittel',    text: 'let var = "Hei";.....' } },
        { id: 11, type: 'text',       atom: { title: 'Parafrasering', text: 'Man kan vise at man lytter ved å parafrasere det som ble sagt. Blabla..' } },
        { id: 12, type: 'imageAsset', atom: { title: 'Pause Terje',   text: 'Terje må huske å ta pause fra jobbinga ',   ref: './assets/image/pauseTerje.png' } },
+       { id: 13, type: 'askChoices', atom: { ask: 'hva er en while-loop?', correct: 1, choices: ['et knutepunkt..', 'kode som itererer til noe er "True"..', 'pause i koden..'] } },
     ],
 }
 
