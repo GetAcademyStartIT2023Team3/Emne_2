@@ -1,0 +1,20 @@
+-------------------------------------------------------------------------------
+Fra Team 3:
+Skjermbilder (mappe: markus)
+-------------------------------------------------------------------------------
+Hei Eskil.
+
+Her kommer det noen skjermbilder.
+
+Bilde 1 temaer.png
+Viser hvordan vi presenterer valg av emne og oversikt over tema for dette emnet.
+
+Bilde 2. artikler.png
+Viser hvordan lærestoffet blir presentert for brukeren.
+
+Bilde 3. ordsky.png
+Viser et utkast av ordskyen som dere nevnte (graphviz).
+
+Kan du gi en tilbakemelding på bildene?
+
+Mvh. Team 3.
