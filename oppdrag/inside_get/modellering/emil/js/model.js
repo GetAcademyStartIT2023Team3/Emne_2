@@ -4,7 +4,7 @@ const model = {
     // app-tilstand
     app: {
         selectedPage: "articles",
-        darkMode: false,
+        darkMode: false,        //trenger vi darkMode hvis siden kun er en farge i utganspunktet ?
         userID: 1,
         pages: {
             articles: {
@@ -75,7 +75,7 @@ const model = {
         { id: 4, name: 'Javascript Introduksjon', artikler: [4] },
     ],
     artikler: [ // flere atomer under en artikkel, legg til disse i atomer: []
-         { id: 1, name: 'for løkker',    atomer: [1, 3, 2, 4, 5] },
+         { id: 1, name: 'for løkker',  atomer: [1, 3, 2, 4, 5] },
          { id: 2, name: 'while løkker',  atomer: [6, 12, 7, 13] },
          { id: 3, name: 'Aktiv lytting', atomer: [11, 12] },
          { id: 4, name: 'Variabler',     atomer: [8, 9, 10] },
@@ -105,3 +105,11 @@ function showModel(title, data) {
         <hr style="margin-top: -1rem;">
     `;
 }
+
+
+/*
+
+    hvordan strukturere modellen
+    hvordan presentere innholdet
+
+*/
