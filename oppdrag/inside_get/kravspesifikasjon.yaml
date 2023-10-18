@@ -3,10 +3,15 @@
 # Eposter og notater er lagret i: /oppdrag/inside_get/kundemoete/
 
 
+Oppdrag: Nettside for å lære nøkkelkompetanse-faget.
+
 Nøkkelpunkter:
-  - En enkel sti som inneholder alle emnene på ukentlig progresjon som fagansvarlig oppretter.
-  - Navigere i historikk over fullførte objekter.
+  - Navigere i historikk over fullførte artikler/objekter.
   - Notifikasjoner (når det legges til nytt materiale, eller oppgave nærmer seg deadline).
-  - Visning: Klikke seg gjennom (tenk powerpoint) eller scrolle seg nedover
+  - Visning:
+    - Klikke seg gjennom (tenk powerpoint) eller scrolle seg nedover
+    - Mulighet til å klikke på annen artikkel som faller under samme tema eller er relatert
+      "Pomodoro" og "locus of control" er et tema som kan falle under relaterte tema slik som "metakognisjon"
+      Dermed kan pomodoro artikkel ha en link til Locus of Control.
+      Og Locus of Control artikkel kan linke til Pomodoro teknikken.
   - Inneholde en ordsky/nettverk over relaterte konsepter
-  - Vise lærestoff på flere måter
