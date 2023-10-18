@@ -1,0 +1,33 @@
+-------------------------------------------------------------------------------
+Fra Team 3:
+Nye Skjermbilder (Baseret på nøkkelkompetansefaget)
+-------------------------------------------------------------------------------
+
+Hei Eskil, takk for praten tidligere idag. 
+
+Vi har gjort noen endringer på skjermbildene som vi ønsker å vise frem til deg.
+I tilegg har vi byttet om på strukturen slik at sidene vi har lagt til nå ligger under NK i hovedmenyen. 
+
+Bilde 1 viser oversikt for nøkkelkompetansefaget
+<BILDE>
+Dette bilde fungerer som forsiden til nøkkelkompetansefaget.
+Her kan du se en liten introduksjon og forklaring om nøkkelkompetanse-faget. 
+I tilegg har vi en oversikt over alle temaene samt hvilke uker disse temaene er i fokus. Disse ukene er linker som vil ta deg til "Teamer" siden med riktig uke. 
+
+
+Bilde 2 viser teamer. 
+<BILDE>
+Her har vi gjort en endring og lagt til muligheten til å sortere etter hoved-teamer.
+
+
+Bilde 3 viser Artikler.
+<BILDE>
+Her har vi også gjort en endring. På høyre side vil du nå se både alle andre artikler som er under samme tema, samt alle relaterte artikler(uavhengig av tema).
+
+
+Gi oss gjerne en tilbakemelding på disse punktene: 
+ - Ser dette bra ut?
+ - Er det noe som mangler?
+ - Er det noen endringer du ønsker?
+
+Mvh Team 3. 
