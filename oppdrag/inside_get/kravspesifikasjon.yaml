@@ -18,3 +18,47 @@ Nøkkelpunkter:
       - under har vi en liten boks som viser relaterte artikler (artikler som har samme nøkkelord)
     venstre_boks:
       - notater
+
+# Slik er nøkkelkompetanse strukturert i inside-get
+Nøkkelkompetanse:
+  # HOVED-TEMA
+  Tenkning og læring:
+    #  TEMA
+    - Problemløsning
+      # - Artikkel 1
+      # - Artikkel 2
+      # - .....
+    - Læring
+    - Kritisk tenkning
+    - Pomodoro
+    - Focused vs diffused
+    - Show and tell
+    - Feynman-teknikken
+    - Feiling
+  Samarbeid og kommunikasjon:
+    - Kommunikasjon
+    - Aktiv lytting
+    - Samarbeid
+    - Sosial kompetanse
+    - Tuckmans modell rundt teamdynamikk
+    - Psykologisk trygghet
+    - Googles Project Aristotle
+  Selvledelse og refleksjon:
+    - Attribusjon
+    - Daglig logg
+    - Egenmotivasjon og prokrastinering
+    - Emosjonell kompetanse
+    - Etisk refleksjon
+    - GRIT
+    - Gode vaner
+    - Growth mindset
+    - Learned helplessness
+    - Locus of control
+    - Mestringstro
+    - Metakognisjon
+    - Personlighetspsykologi
+    - Signaturstyrker
+    - 7 Habits
+    - Isfjellmetafor
+    - Nevroplastisitet
+    - The Art of Failing Well
