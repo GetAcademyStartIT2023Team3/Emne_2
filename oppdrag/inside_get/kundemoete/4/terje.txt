@@ -1,0 +1,28 @@
+Parafrasert melding fra Terje i Team 3 chat - Discord
+-----------------------------------------------------
+Her er et eksempel på behovet for appen dere lager.
+
+I chorei idag underviser Eskil om en person: William Ury.
+Når jeg legger det ut på inside.getacademy.no, hvor kan jeg legge det?
+Jeg har lagt dette til her nå (https://inside.getacademy.no/#428)
+..men hva kan en annen løsning være?
+
+Hva skal jeg kalle overskriften? Skal jeg bruke navnet hans.
+Sånn sett burde kanskje alle personers navn hatt en egen artikkel:
+    Martin Seligman (signaturstyrker)
+    Carol Dweck (fixed mindset)
+    osv...
+..derav behovet for ulike innganger til hvert tema.
+
+Her er noen flere innganger til hvert tema som jeg kan komme på.
+    1. via rekkefølgen Eskil følger uke for uke
+    2. via navn (som over)
+    3. via en eller annen struktur (tenke&lære, samarbeid&kommunikasjon, selvledelse&refleksjon)
+    4. via relaterte tema som i pomodoro har med både focused og diffused mindset og læring
+    5. via hva slags type innhold, se ekempsel under.
+        En artikkel om "pomodoro teknikken" tilhører temaet "studie-teknikk",
+        En artikkel om "Focused and diffused mindset" hører også til under "studie-teknikk".
+        Begge artiklene over tilhører hovedtema "Tenking og læring".
+        Kanskje disse også burde hatt egen side?...
+
+Den underliggende utfordringen er hvordan vi presenterer dette på en smart måte til studentene.
