@@ -11,13 +11,16 @@
 </head>
 <body>
     <div class="container">
+
         <div class="top_header">
-            <img src="img/logo.png" alt="GET Academy logo" width="125">
-            <a href="" class="notification_bell">
-                <span>Inboks</span>
-                <span class ="badge">1</span>
-            </a>
-            <p>XXXXX@getacademy.no</p>
+            <img src="img/logo.png" alt="GET Academy logo" width="200">
+            <div>
+                <a href="" class="notification_bell">
+                    <span>Inboks</span>
+                    <span class ="badge">1</span>
+                </a>
+                <p>XXXXX@getacademy.no</p>
+            </div>
         </div>
 
         <div class="second_header">
@@ -36,13 +39,15 @@
                 <li><a href="">Ukeplan</a></li>
                 <li><a href="">Kart</a></li>
             </ul>
-            <button>Tilbake</button>
-            <button>Frem</button>
-            <input type="text" placeholder="Search..">
+            <div>
+                <button>Tilbake</button>
+                <button>Frem</button>
+                <input type="text" placeholder="Search..">
+            </div>
         </div>
 
         <div class="main">
-            <h3>Nøkkelkompetanse</h3>
+            <h1>Nøkkelkompetanse</h1>
             <p>
                 I nøkkelkompetanse emnet vil du lære om... 
                 <br> metakognisjon, blablabla sammarbeid, blablabla
@@ -64,37 +69,68 @@
                 </ul>
             </div>
 
-            <div class="">
-                <h4>Sammarbeid og kommunikasjon</h4>
+            <hr>
+            
+            <div>
+                <details>
+                    <summary>Sammarbeid og Kommunikasjon</summary>
+                    <ul>
+                        <li><a href="">Kommunikasjon</a></li>
+                        <li><a href="">Aktiv lytting</a></li>
+                        <li><a href="">Samarbeid</a></li>
+                    </ul>
+                    <div class="introduction_box">
+                        <p>
+                            Her introduserer vi... 
+                            <br> Vi vil gå gjennom...
+                        </p>
+                    </div>
+                </details>
                 <a href="">Fortsett fra: Pomodoro</a>
             </div>
 
-            <div class="">
-                <h4>Tenkning og læring</h4>
+            <div class="light_foreground">
+                <details>
+                    <summary>Tenkning og læring</summary>
+                    <ul>
+                        <li><a href="">Problemløsning</a></li>
+                        <li><a href="">Pomodoro</a></li>
+                        <li><a href="">Kritisk tenkning</a></li>
+                    </ul>
+                    <div class="introduction_box">
+                        <p>
+                            Her introduserer vi... 
+                            <br> Vi vil gå gjennom...
+                        </p>
+                    </div>
+                </details>
                 <a href="">Fortsett fra: Aktiv lytting</a>
-                <ul>
-                    <li><a href="">Kommunikasjon</a></li>
-                    <li><a href="">Aktiv lytting</a></li>
-                    <li><a href="">Samarbeid</a></li>
-                </ul>
-                <div class="introduction_box">
-                    <p>
-                        Her introduserer vi... 
-                        <br> Vi vil gå gjennom...
-                    </p>
-                </div>
             </div>
 
-            <div class="">
-                <h4>Selvledelse og refleksjon</h4>
+            <div>
+                <details>
+                    <summary>Selvledelse og refleksjon</summary>
+                    <ul>
+                        <li><a href="">Attribusjon</a></li>
+                        <li><a href="">Growth mindset</a></li>
+                        <li><a href="">Locus of control</a></li>
+                    </ul>
+                    <div class="introduction_box">
+                        <p>
+                            Her introduserer vi... 
+                            <br> Vi vil gå gjennom...
+                        </p>
+                    </div>
+                </details>
                 <a href="">Fortsett fra: Attribusjon</a>
             </div>
+
         </div>
 
         <div class="sidebar">
             <h2>Nyeste lest</h2>
             <ul>
-                <li>
+                <li class="light_foreground">
                     <a href="">
                         <div>Sammarbeid og Kommunkasjon</div>
                         <div>Kommunkasjon</div>
@@ -106,7 +142,7 @@
                         <div>Nevroplastisitet</div>
                     </a>
                 </li>
-                <li>
+                <li class="light_foreground">
                     <a href="">
                         <div>Sammarbeid og Kommunkasjon</div>
                         <div>Kritisk Tenkning</div>
@@ -114,6 +150,7 @@
                 </li>
             </ul>
         </div>
+
     </div>
 </body>
 </html>

@@ -1,5 +1,5 @@
 body {
-    background-color: #bdc0c3;
+    background-color: #11191f;
 }
 /* background-color: #11191f; */
 .lightblue {
@@ -14,6 +14,18 @@ body {
     color: #F44E01;
 }
 
-p {
+p, li, h1, h2, h3, h4, h5, summary{
     color: #BBC6CE;
+}
+
+a {
+    color: #1095C1;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.light_foreground {
+    background-color: #edf6ff;
 }
