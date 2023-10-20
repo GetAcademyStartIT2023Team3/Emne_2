@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root {
+            --background: #11191F;
+            --foreground:  #141E26;
+            --foreground_light: #19232B;
+            background: var(--background);
+            color: #BBC6CE;
+        }
+        * {
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        a {
+            color: #1095C1;
+        }
+        .hrz {
+            display: flex;
+            justify-content: center;
+        }
+        nav {
+            font-size: 14pt;
+            display: flex;
+            justify-content: center;
+        }
+        .main {
+            padding: 10px;
+            background: var(--foreground);
+            margin: 10px;
+            > details:nth-child(odd) {
+                background: var(--foreground_light);
+            }
+        }
+        .outer {
+            display: flex;
+            width: 100%;
+            justify-content: center;
+        }
+        .left {
+            width: 100%;
+        }
+        .right {
+            background: var(--background);
+            width: 400px;
+        }
+        .history {
+            background: var(--foreground);
+            > li:nth-child(odd) {
+                background: var(--foreground_light);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class ="hrz">
+        <img src="https://inside.getacademy.no/img/logo.png" style="width: 9rem"/><div style="width:900px"></div><details><summary>user@getacademy.no</summary><a href="">Logg ut</a></details>
+    </div>
+    <nav>
+        <pre><a href="">Student</a> | </pre>
+        <pre><a href="">Emne 1</a> | </pre>
+        <pre><a href="">Emne 2</a> | </pre>
+        <pre><a href="">Emne 3</a> | </pre>
+        <pre><a href="">NK</a> | </pre>
+        <pre><a href="">Bonus</a> | </pre>
+        <pre><a href="">Oblig</a> | </pre>
+        <pre><a href="">Opptak</a></pre>
+    </nav>
+    <nav>
+        <pre>Hovedside | </pre>
+        <pre><a href="">Ukeplan</a> | </pre>
+        <pre><a href="">Kart</a></pre>
+    </nav>
+    <div class="hrz outer">
+        <div style="flex: 1;"></div>
+        <div class="main" style="flex:1">
+            <div class="hrz">
+                <div class="left">
+                    <h3>Nøkkelkompetanse</h3>
+                    <pre>I Nøkkelkompetanse lærer vi om blablabla<br/>blablablablablabla blablabla blablablablablabla blablabla blablabla<br/>blablablablablablablablablablablablablablabla<br/>blablabla blablabla blablabla blablabla</pre>
+                </div>
+                <ul class="right">
+                    <h5>Denne uken</h5>
+                    <li>Mandag: <a href="">Kommunikasjon</a></li>
+                    <li>Tirsdag: <a href="">Nevroplastisitet</a></li>
+                    <li>Onsdag: <a href="">Pomodoro</a></li>
+                    <li>Torsdag: <a href="">Feynman-teknikken</a></li>
+                    <li>Fredag: <a href="">Kritisk Tenkning</a></li>
+                </ul>
+            </div>
+            <details>
+                <summary style="user-select: none">Sammarbeid og Kommunikasjon   <a href="">Fortsett fra: Aktiv Lytting</a></summary>
+                <div class="hrz">
+                    <ul>
+                        <li><a href="">Pomodoro</a></li>
+                        <li><a href="">Nevroplastisitet</a></li>
+                        <li><a href="">Samarbeid</a></li>
+                    </ul>
+                    <div class="right">
+                        <p>I sammarbeid og kommunikasjon handler det om...</p>
+                    </div>
+                </div>
+            </details>
+            <details>
+                <summary style="user-select: none">Tenkning og Læring   <a href="">Fortsett fra: Pomodoro</a></summary>
+                <div class="hrz">
+                    <ul>
+                        <li><a href="">Pomodoro</a></li>
+                        <li><a href="">Nevroplastisitet</a></li>
+                        <li><a href="">Samarbeid</a></li>
+                    </ul>
+                    <div class="right">
+                        <p>I sammarbeid og kommunikasjon handler det om...</p>
+                    </div>
+                </div>
+            </details>
+        </div>
+        <div style="flex:1;">
+            <div>Søk: <input type="text"/></div>
+            <ul class="history">
+                <h5>Nyeste Lest</h5>
+                <li>
+                    <h6>Sammarbeid og Kommunikasjon</h6>
+                    <a href="">Kommunikasjon</a>✅
+                </li>
+                <li>
+                    <h6>Tenkning og Læring</h6>
+                    <a href="">Nevroplastisitet</a>
+                </li>
+                <li>
+                    <h6>Sammarbeid og Kommunikasjon</h6>
+                    <a href="">Kritisk Tenkning</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
