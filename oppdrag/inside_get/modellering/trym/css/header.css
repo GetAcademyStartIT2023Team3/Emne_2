@@ -1,0 +1,51 @@
+.top_header {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* .second_header {
+    display: flex;
+
+} */
+
+.main_navbar {
+    display: flex;
+    justify-content: center;
+}
+
+.main_navbar > li {
+    margin: 10px;
+}
+
+.second_navbar {
+    display: flex;
+    justify-content: center;
+}
+
+.second_navbar > li {
+    margin: 10px;
+}
+
+.notification_bell {
+    background-color: #555;
+    color: white;
+    text-decoration: none;
+    padding: 15px 26px;
+    position: relative;
+    display: inline-block;
+    border-radius: 2px;
+}
+
+.notification_bell:hover {
+    background: red;
+}
+  
+.notification_bell .badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    padding: 5px 10px;
+    border-radius: 50%;
+    background: red;
+    color: white;
+}
