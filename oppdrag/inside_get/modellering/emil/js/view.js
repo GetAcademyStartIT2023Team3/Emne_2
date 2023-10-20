@@ -1,5 +1,5 @@
 let pages = {
-    tema: '<a href="tema.html">Tema View</a>'
+    tema: '<a href="hovedside.html">Hovedside</a>'
 };
 
 function updateView() {
