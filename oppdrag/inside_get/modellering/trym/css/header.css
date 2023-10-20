@@ -30,10 +30,11 @@
     background-color: #555;
     color: white;
     text-decoration: none;
-    padding: 15px 26px;
+    padding: 10px 20px;
     position: relative;
     display: inline-block;
     border-radius: 2px;
+    margin-bottom: 10px;
 }
 
 .notification_bell:hover {
@@ -44,7 +45,7 @@
     position: absolute;
     top: -10px;
     right: -10px;
-    padding: 5px 10px;
+    padding: 3px 7px;
     border-radius: 50%;
     background: red;
     color: white;

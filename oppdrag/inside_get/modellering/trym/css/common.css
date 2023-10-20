@@ -1,17 +1,16 @@
-body {
-    background-color: #11191f;
-}
-/* background-color: #11191f; */
+/* colors:
 .lightblue {
     color: #1095C1;
 }
-
 .white {
     color: #BBC6CE;
 }
-
 .orange {
     color: #F44E01;
+}
+*/
+body {
+    background-color: #11191f;
 }
 
 p, li, h1, h2, h3, h4, h5, summary{
@@ -27,5 +26,11 @@ ul {
 }
 
 .light_foreground {
-    background-color: #edf6ff;
+    background-color: #19232B;
+}
+
+.container {
+    margin-top: 2rem;
+    margin-left: 20rem;
+    margin-right: 20rem;
 }
