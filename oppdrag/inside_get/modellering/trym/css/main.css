@@ -13,7 +13,8 @@
 
 .week_schedule {
     background-color: #11191F;
-    margin-right: 20px;
+    margin: 20px 20px 60px 20px;
+    padding: 10px 20px 10px 10px;
 }
 
 .introduction_box {

@@ -1,6 +1,8 @@
 /* lightblue = color: #1095C1; white = color: #BBC6CE; orange = color: #F44E01; */
 body {
     background-color: #11191f;
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif
 }
 
 p, li, h1, h2, h3, h4, h5, summary {
@@ -13,6 +15,7 @@ a {
 
 ul {
     list-style-type: none;
+    padding: 0;
 }
 
 .list li:nth-child(odd) {

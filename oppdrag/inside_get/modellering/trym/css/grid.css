@@ -22,4 +22,7 @@
 .sidebar {
     background-color: #141E26;
     grid-area: sidebar;
+    display: flex;
+    flex-direction: column;
+
 }

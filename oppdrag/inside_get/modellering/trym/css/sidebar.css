@@ -1,3 +1,24 @@
 /* .sidebar_list li:nth-child(even){
     background-color: #19232B
 } */
+
+.sidebar > h2 {
+    padding-left: 15px;
+}
+
+.item_center {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.item_center > a {
+    text-decoration: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.bold_text {
+    font-weight: bold;
+    color: #BBC6CE;
+}
