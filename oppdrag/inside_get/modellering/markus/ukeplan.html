@@ -4,63 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        :root {
-            --background: #11191F;
-            --foreground:  #141E26;
-            --foreground_light: #19232B;
-            background: var(--background);
-            color: #BBC6CE;
-        }
-        * {
-            border-radius: 5px;
-            box-sizing: border-box;
-        }
-        a {
-            color: #1095C1;
-        }
-        .hrz {
-            display: flex;
-            justify-content: center;
-        }
-        nav {
-            font-size: 14pt;
-            display: flex;
-            justify-content: center;
-        }
-        .ukeplan {
-            padding: 10px;
-            background: var(--foreground);
-            margin: 10px;
-            > div > div:nth-of-type(odd) {
-                background: var(--foreground_light);
-            }
-        }
-        .ukedag {
-            justify-content: space-evenly;
-        }
-        .outer {
-            display: flex;
-            width: 100%;
-            justify-content: center;
-            align-items: stretch;
-            height: 854px;
-        }
-        .left {
-            width: 100%;
-        }
-        .right {
-            background: var(--background);
-            width: 400px;
-        }
-        .history {
-            height: 800px;
-            background: var(--foreground);
-            > li:nth-child(odd) {
-                background: var(--foreground_light);
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/styles.css">
+
 </head>
 <body>
     <div class ="hrz">
@@ -83,12 +28,12 @@
     </nav>
     <div class="hrz outer">
         <!-- Left padding --> <div style="flex: 2;"></div>
-        <div class="ukeplan hrz" style="flex:3">
+        <div class="container hrz" style="flex:3">
             <div style="flex: 4">
                 <h2>Ukeplan</h2>
                 <hr>
                 <h3>Mandag</h3>
-                <div class="hrz ukedag">
+                <div class="hrz even">
                     <div>
                         Sammarbeid og Kommunikasjon<br>
                         <a href="">Kommunikasjon</a>
@@ -99,21 +44,21 @@
                     </div>
                 </div>
                 <h3>Tirsdag</h3>
-                <div class="hrz ukedag">
+                <div class="hrz even">
                     <div>
                         XXXXXXXXXX<br>
                         <a href="">xxxxx</a>
                     </div>
                 </div>
                 <h3>Onsdag</h3>
-                <div class="hrz ukedag">
+                <div class="hrz even">
                     <div>
                         XXXXXXXXXXXXXXXXXXXX<br>
                         <a href="">xxxxxxxxxxxxxx</a>
                     </div>
                 </div>
                 <h3>Torsdag</h3>
-                <div class="hrz ukedag">
+                <div class="hrz even">
                     <div>
                         XXXXXXXX XXXXXXXX<br>
                         <a href="">xxxxxxxxxx</a>
@@ -128,7 +73,7 @@
                     </div>
                 </div>
                 <h3>Fredag</h3>
-                <div class="hrz ukedag">
+                <div class="hrz even">
                     <div>
                         XXXXXXXX<br>
                         <a href="">xxxxxx</a>
@@ -148,7 +93,7 @@
         </div>
         <div style="flex:1;">
             <div>Søk: <input type="text"/></div>
-            <ul class="history">
+            <ul class="container">
                 <h5>Nyeste Lest</h5>
                 <li>
                     <h6>Sammarbeid og Kommunikasjon</h6>

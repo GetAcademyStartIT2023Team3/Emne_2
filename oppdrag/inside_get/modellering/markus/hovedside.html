@@ -4,57 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        :root {
-            --background: #11191F;
-            --foreground:  #141E26;
-            --foreground_light: #19232B;
-            background: var(--background);
-            color: #BBC6CE;
-        }
-        * {
-            border-radius: 5px;
-            box-sizing: border-box;
-        }
-        a {
-            color: #1095C1;
-        }
-        .hrz {
-            display: flex;
-            justify-content: center;
-        }
-        nav {
-            font-size: 14pt;
-            display: flex;
-            justify-content: center;
-        }
-        .main {
-            padding: 10px;
-            background: var(--foreground);
-            margin: 10px;
-            > details:nth-child(odd) {
-                background: var(--foreground_light);
-            }
-        }
-        .outer {
-            display: flex;
-            width: 100%;
-            justify-content: center;
-        }
-        .left {
-            width: 100%;
-        }
-        .right {
-            background: var(--background);
-            width: 400px;
-        }
-        .history {
-            background: var(--foreground);
-            > li:nth-child(odd) {
-                background: var(--foreground_light);
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <div class ="hrz">
@@ -76,14 +26,15 @@
         <pre><a href="">Kart</a></pre>
     </nav>
     <div class="hrz outer">
-        <div style="flex: 1;"></div>
-        <div class="main" style="flex:1">
-            <div class="hrz">
-                <div class="left">
+        <!-- Left Padding --> <div style="flex: 1;"></div>
+        <div class="container" style="flex:3">
+            <h2>Hovedside</h2>
+            <div class="hrz even">
+                <div>
                     <h3>Nøkkelkompetanse</h3>
                     <pre>I Nøkkelkompetanse lærer vi om blablabla<br/>blablablablablabla blablabla blablablablablabla blablabla blablabla<br/>blablablablablablablablablablablablablablabla<br/>blablabla blablabla blablabla blablabla</pre>
                 </div>
-                <ul class="right">
+                <ul class="dark">
                     <h5>Denne uken</h5>
                     <li>Mandag: <a href="">Kommunikasjon</a></li>
                     <li>Tirsdag: <a href="">Nevroplastisitet</a></li>
@@ -100,7 +51,7 @@
                         <li><a href="">Nevroplastisitet</a></li>
                         <li><a href="">Samarbeid</a></li>
                     </ul>
-                    <div class="right">
+                    <div class="dark">
                         <p>I sammarbeid og kommunikasjon handler det om...</p>
                     </div>
                 </div>
@@ -121,7 +72,7 @@
         </div>
         <div style="flex:1;">
             <div>Søk: <input type="text"/></div>
-            <ul class="history">
+            <ul class="container">
                 <h5>Nyeste Lest</h5>
                 <li>
                     <h6>Sammarbeid og Kommunikasjon</h6>
@@ -137,6 +88,7 @@
                 </li>
             </ul>
         </div>
+        <!-- Right Padding --> <div style="flex: 1;"></div>
     </div>
 </body>
 </html>
