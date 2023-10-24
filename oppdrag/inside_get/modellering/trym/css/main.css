@@ -1,7 +1,3 @@
-.main {
-    background-color: #141E26;
-}
-
 .main_navbar, .second_navbar {
     margin: 0;
     padding: 0;
@@ -9,6 +5,7 @@
 
 .horizontal {
     display: flex;
+    justify-content: space-between;
     width: 100%;
     padding-right: 0;
     margin-right: 0;
@@ -16,4 +13,10 @@
 
 .week_schedule {
     background-color: #11191F;
+    margin-right: 20px;
+}
+
+.introduction_box {
+    background-color: #11191F;
+    display: flex;
 }

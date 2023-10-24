@@ -1,19 +1,9 @@
-/* colors:
-.lightblue {
-    color: #1095C1;
-}
-.white {
-    color: #BBC6CE;
-}
-.orange {
-    color: #F44E01;
-}
-*/
+/* lightblue = color: #1095C1; white = color: #BBC6CE; orange = color: #F44E01; */
 body {
     background-color: #11191f;
 }
 
-p, li, h1, h2, h3, h4, h5, summary{
+p, li, h1, h2, h3, h4, h5, summary {
     color: #BBC6CE;
 }
 
@@ -25,12 +15,6 @@ ul {
     list-style-type: none;
 }
 
-.light_foreground {
-    background-color: #19232B;
-}
-
-.container {
-    margin-top: 2rem;
-    margin-left: 20rem;
-    margin-right: 20rem;
+.list li:nth-child(odd) {
+    background-color: #19232B
 }

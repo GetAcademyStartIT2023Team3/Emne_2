@@ -1,0 +1,25 @@
+.container {
+    margin-top: 2rem;
+    margin-left: 20rem;
+    margin-right: 20rem;
+    display: grid;
+    grid-template-areas: 
+    "header header header header"
+    "main main main sidebar"
+    ;
+}
+
+.header {
+    grid-area: header;
+}
+
+.main {
+    background-color: #141E26;
+    grid-area: main;
+    margin-right: 50px;
+}
+
+.sidebar {
+    background-color: #141E26;
+    grid-area: sidebar;
+}
