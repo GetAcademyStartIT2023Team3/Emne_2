@@ -1,8 +1,8 @@
 .container {
-    margin-top: 2rem;
-    margin-left: 20rem;
-    margin-right: 20rem;
     display: grid;
+    grid-template-rows: auto 1fr;
+    height: 100vh;
+    width: 100vw;
     grid-template-areas: 
     "header header header header"
     "main main main sidebar"
@@ -14,15 +14,14 @@
 }
 
 .main {
-    background-color: #141E26;
     grid-area: main;
-    margin-right: 50px;
+    background-color: #141E26;
+    margin-right: 2vw;
 }
 
 .sidebar {
-    background-color: #141E26;
     grid-area: sidebar;
+    background-color: #141E26;
     display: flex;
     flex-direction: column;
-
 }

@@ -1,12 +1,7 @@
-.top_header {
+.first_header {
     display: flex;
     justify-content: space-between;
 }
-
-/* .second_header {
-    display: flex;
-
-} */
 
 .main_navbar {
     display: flex;
@@ -24,6 +19,11 @@
 
 .second_navbar > li {
     margin: 10px;
+}
+
+.main_navbar, .second_navbar {
+    margin: 0;
+    padding: 0;
 }
 
 .notification_bell {

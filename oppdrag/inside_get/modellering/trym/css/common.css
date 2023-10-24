@@ -1,7 +1,10 @@
 /* lightblue = color: #1095C1; white = color: #BBC6CE; orange = color: #F44E01; */
 body {
+    box-sizing: border-box;
     background-color: #11191f;
     height: 100%;
+    margin: 0;
+    padding: 0;
     font-family: Arial, Helvetica, sans-serif
 }
 
@@ -15,6 +18,11 @@ a {
 
 ul {
     list-style-type: none;
+    padding: 0;
+}
+
+.list {
+    margin: 0;
     padding: 0;
 }
 

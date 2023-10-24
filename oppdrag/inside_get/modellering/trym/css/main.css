@@ -1,14 +1,9 @@
-.main_navbar, .second_navbar {
-    margin: 0;
-    padding: 0;
-}
-
 .horizontal {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    padding-right: 0;
-    margin-right: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .week_schedule {
@@ -20,4 +15,8 @@
 .introduction_box {
     background-color: #11191F;
     display: flex;
+}
+
+.intro_text {
+    padding-left: 2%;
 }
