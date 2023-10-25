@@ -41,14 +41,10 @@ nav {
     text-align: center; 
     font-family: 'Comic Sans MS', 'Comic Sans', cursive;
 }
-
-.outer {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: stretch;
-    height: 854px;
+.nopad {
+    padding: 0 !important;
 }
 .dark {
+    padding: 10px;
     background: var(--background);
 }
