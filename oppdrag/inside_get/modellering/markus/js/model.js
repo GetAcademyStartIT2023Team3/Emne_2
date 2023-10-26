@@ -2,7 +2,7 @@
 
 const model = {
     app: {
-        selectedPage: "articles",
+        selectedPage: "main",
         pages: {
             articles: {
                 selectedID: 1,
@@ -11,6 +11,9 @@ const model = {
                 selectedArticle: 1,
                 subjectIndex: 1,
                 selectedPage: 1,
+            },
+            mainpage: {
+                weekId: 1
             }
         }
     },

@@ -41,10 +41,13 @@ nav {
     text-align: center; 
     font-family: 'Comic Sans MS', 'Comic Sans', cursive;
 }
-.nopad {
-    padding: 0 !important;
-}
+
 .dark {
     padding: 10px;
-    background: var(--background);
+    background: var(--background) !important;
+}
+
+.padding {
+    flex-shrink: 0.1;
+    min-width: 20px;
 }
