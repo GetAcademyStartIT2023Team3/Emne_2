@@ -68,7 +68,7 @@ const model = {
          { id: 7, name: 'Samarbeid', atoms: [[8, 9, 10]], keywords: [], topicId: 3, status: null },
     ],
 
-    atomer: [
+    atoms: [
        { id: 1,  type: 'text',       atom: { title: 'Aktiv-lytting', text: 'For løkker er viktig i mange situasjoner. Bla bla..' } },
        { id: 2,  type: 'imageHTTP',  atom: { title: 'Bildetittel',   text: 'dette er et fint motivasjons-bilde',                  ref: 'https://getacademy.no/hubfs/GET_RGB_logo-01-2.png' } },
        { id: 3,  type: 'imageAsset', atom: { title: 'Bildetittel',   text: 'dette er et fint hjerne-bilde',                       ref: './assets/image/123.png' } },
