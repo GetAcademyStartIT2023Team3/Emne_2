@@ -2,6 +2,7 @@
     --background: #11191F;
     --foreground:  #141E26;
     --foreground_light: #19232B;
+    --lightblue: #1095C1;
     background: var(--background);
     color: #BBC6CE;
 }
@@ -10,7 +11,7 @@
     box-sizing: border-box;
 }
 a {
-    color: #1095C1;
+    color: var(--lightblue);
 }
 .hrz {
     display: flex;
@@ -27,6 +28,7 @@ nav {
     justify-content: space-evenly;
 }
 .container {
+    font-size: 1vw;
     margin: 10px;
     padding: 10px;
     background: var(--foreground);
@@ -50,4 +52,10 @@ nav {
 .padding {
     flex-shrink: 0.1;
     min-width: 20px;
+}
+
+@media screen and (min-width: 700px) {
+    .padding {
+        width: 5px;
+    }
 }

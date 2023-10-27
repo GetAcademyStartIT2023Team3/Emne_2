@@ -14,6 +14,9 @@ const model = {
             },
             mainpage: {
                 weekId: 1
+            },
+            mappage: {
+                selectedKeyword: 0
             }
         }
     },
@@ -41,21 +44,21 @@ const model = {
     ],
 
     keywords: [
-        { id: 1, navn: "Psykologisk Trygghet" },
-        { id: 1, navn: "Psykologi" },
-        { id: 2, navn: "Studieteknikker" },
-        { id: 3, navn: "Pomodoro" },
-        { id: 4, navn: "Tenkning og Læring" },
-        { id: 5, navn: "Attribusjon" },
-        { id: 6, navn: "Growth Mindset" },
+        { name: "Psykologisk Trygghet"},
+        { name: "Psykologi" },
+        { name: "Studieteknikker" },
+        { name: "Pomodoro" },
+        { name: "Tenkning og Læring" },
+        { name: "Attribusjon" },
+        { name: "Growth Mindset" },
     ],
 
     keyword_relations: [
-        { idA: 1, idB: 4 },
-        { idA: 1, idB: 5 },
-        { idA: 2, idB: 3 },
-        { idA: 4, idB: 6 },
-        { idA: 1, idB: 6 },
+        { idxA: 0, idxB: 3 },
+        { idxA: 0, idxB: 4 },
+        { idxA: 1, idxB: 2 },
+        { idxA: 3, idxB: 5 },
+        { idxA: 0, idxB: 5 },
     ],
 
     articles: [
