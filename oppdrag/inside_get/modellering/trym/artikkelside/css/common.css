@@ -35,3 +35,7 @@ a {
 .text {
     color: var(--white);
 }
+
+li > a:hover {
+    color: #F44E01;
+}
