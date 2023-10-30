@@ -95,55 +95,170 @@ function updateMainpageView() {
     `;
 }
 
-let simStuff = {
+let graph = {
+    nodes: [],
+    links: [],
+    oneAway: [],
     svg: null,
+    nodeSvg: null,
     linkSvg: null,
-    links: new Set(),
-    linkForce: null, 
+    linkForce: null,
     simulation: null,
-};
+    setup: function() {
+        this.svg = d3.select("svg")
+            .attr("viewBox", [-750, -500, 1500, 1000])
+            .attr("width", 1500)
+            .attr("height", 1000)
+            .attr("style", "max-width: 100%; height: auto");
 
-function refreshSim() {
-    simStuff.links.clear();
-    simStuff.svg.selectAll("line").exit().remove();
-
-    for(let rel of model.keyword_relations){
-        if(rel.idxA == model.app.pages.mappage.selectedKeyword) {
-            simStuff.links.add({ source: model.keywords[rel.idxA], target: model.keywords[rel.idxB] });
-            for(let rel2 of model.keyword_relations) if(rel2.idxA == rel.idxB || rel2.idxB == rel.idxB)
-            simStuff.links.add({ source: model.keywords[rel2.idxA], target: model.keywords[rel2.idxB] });
+        for(let i = 0; i < 50; i++) {
+            let r = Math.floor(Math.random()*5);
+            model.keywords.push({ name: "XXX" + "X".repeat(r)});
         }
-        if(rel.idxB == model.app.pages.mappage.selectedKeyword) {
-            simStuff.links.add({ source: model.keywords[rel.idxA], target: model.keywords[rel.idxB] });
-            for(let rel2 of model.keyword_relations) if(rel2.idxA == rel.idxA || rel2.idxB == rel.idxA)
-            simStuff.links.add({ source: model.keywords[rel2.idxA], target: model.keywords[rel2.idxB] });
-    }        
+    
+
+        this.nodes = [
+            ...model.keywords
+        ];
+
+        
+        
+        for(let i = 0; i < 50; i++) {
+            let r1 = Math.floor(Math.random()*this.nodes.length);
+            let r2 = Math.floor(Math.random()*this.nodes.length);
+            model.keyword_relations.push({idxA: r1, idxB: r2});
+        }
+
+        this.createLinks();
+        this.createNodes();
+        
+        this.linkForce = d3.forceLink(this.links).distance(100).strength(0.5);
+
+        this.simulation = d3.forceSimulation(this.nodes)
+            .force("charge", d3.forceManyBody().strength(-200))
+            .force("link", this.linkForce)
+            .force("center", d3.forceCenter())
+            .force("radial", d3.forceRadial(200).strength(0.05))
+            .force("collide", d3.forceCollide().radius(60).strength(0.1))
+            .on("tick", this.ticked.bind(this));
+
+        this.refreshSimulation(model.app.pages.mappage.selectedKeyword);
+    },
+    ticked: function() {
+        this.linkSvg
+            .attr("x1", d => d.source.x)
+            .attr("y1", d => d.source.y)
+            .attr("x2", d => d.target.x)
+            .attr("y2", d => d.target.y);
+        this.nodeSvg
+            .attr("transform", d => {
+                d.x = Math.max(-600, Math.min(600, d.x));
+                d.y = Math.max(-450, Math.min(450, d.y));
+                return `translate(${d.x}, ${d.y})`
+            });
+    },
+    createLinks: function() {
+        this.linkSvg = this.svg
+            .selectAll("line")
+            .data(this.links)
+            .enter()
+            .append("line")
+            .attr("stroke-width", d => 2)
+            .style("stroke", "black");
+    },
+    createNodes: function() {
+        this.nodeSvg = this.svg
+            .selectAll("g")
+            .data(this.nodes)
+            .enter()
+            .append("a")
+            .attr("href", (_, i) => `javascript: graph.refreshSimulation(${i})`)
+            .append("g")
+
+        this.nodeSvg
+            .append("rect")
+            .attr("x", -15)
+            .attr("y", -10)
+            .attr("width", 30)
+            .attr("height", 30)
+            .attr("fill", "var(--foreground)");
+
+        this.nodeSvg
+            .append("text")
+            .attr("font-size", "16pt")
+            .attr("text-anchor", "middle")
+            .attr("dy", "0.5em")
+            .attr("fill", (d,i) => {
+                let selected = model.app.pages.mappage.selectedKeyword;
+                if(i == selected) return "var(--highlight)";
+                else if(this.oneAway.some((e) => e == i)) return "#FF00FF";
+                return "var(--lightblue)";
+            })
+            .on("mouseover", (event, d) => d3.select(event.currentTarget).style("outline", "dotted 3px var(--lightblue)"))
+            .on("mouseout", (event, d) => d3.select(event.currentTarget).style("outline", ""))
+            .text((d) => d.name);
+    },
+    refreshSimulation: function(clicked) {
+        model.app.pages.mappage.selectedKeyword = clicked;
+        updateRelatedSubview();
+        let selected = model.app.pages.mappage.selectedKeyword;
+        this.links.length = 0;
+
+        this.oneAway = [];
+        for(let rel of model.keyword_relations) {
+            if(rel.idxA == selected) this.oneAway.push(rel.idxB);
+            else if(rel.idxB == selected) this.oneAway.push(rel.idxA);
+        }
+        for(let rel of model.keyword_relations) if(this.oneAway.some((e) => e == rel.idxA) || this.oneAway.some((e) => e == rel.idxB)) {
+            this.links.push({ source: rel.idxA, target: rel.idxB });
+        }
+
+        for(let i = 0; i < this.nodes.length; i++) {
+            this.nodes[i].fx = null;
+            this.nodes[i].fy = null;
+        }
+
+        let selectedNode = this.nodes[clicked];
+        d3.select(this.nodeSvg._groups[0][clicked])
+            .transition()
+            .duration(600)
+            .tween('move', function () {
+                const ix = d3.interpolate(selectedNode.x, 0);
+                const iy = d3.interpolate(selectedNode.y, 0);
+                return function (t) {
+                    selectedNode.fx = ix(t);
+                    selectedNode.fy = iy(t);
+                    graph.simulation.alpha(0.5).tick();
+                };
+            });
+        
+
+        this.linkForce.links(this.links);
+        this.linkSvg.remove();
+        this.createLinks();
+
+        this.nodeSvg.remove();
+        this.createNodes();
+
+        this.simulation.alpha(0.5).restart();
+    }
 }
-    
-const lines = simStuff.svg.selectAll("line")
-        .data(Array.from(simStuff.links));
 
-    lines
-        .attr("x1", d => d.source.x+400)
-        .attr("y1", d => d.source.y+400)
-        .attr("x2", d => d.target.x+400)
-        .attr("y2", d => d.target.y+400);
-
-    lines.exit().remove();
-
-    // Add new lines with proper x1, y1, x2, y2 attributes
-    lines.enter()
-        .append("line")
-        .attr("stroke-width", d => 2)
-        .style("stroke", "black")
-
-
-
-    console.log(simStuff.links);
-    
-    simStuff.linkForce = d3.forceLink(Array.from(simStuff.links)).distance(200);
-    simStuff.simulation.force("link", simStuff.linkForce);
-    simStuff.simulation.alpha(0.5).restart();
+function updateRelatedSubview() {
+    let selected = model.app.pages.mappage.selectedKeyword;
+    let related = document.getElementById("related");
+    let listHtml = "";
+    for(let article of model.articles) if(article.keywords.some((e) => e == selected)) {
+        listHtml += /*html*/`<li><a href="">${article.name}</a></li>`;
+    }
+    related.innerHTML = /*html*/`
+        <ul class="history">
+            <h3>${model.keywords[selected].name} er nevnt i disse artiklene:</h3>
+            <ul>
+                ${listHtml}
+            </ul> 
+        </ul>
+    `;
 }
 
 function updateMappageView() {
@@ -154,12 +269,17 @@ function updateMappageView() {
         <div class="hrz">
             <div style="flex: 1"></div>
             <div class="container">
+                <div style="position: relative">
+                    <div style="position: absolute; right: 20px;">
+                        <!-- Position relative triks -->
+                    </div>
+                </div>
                 <div style="flex: 3; min-width: 20px"></div>
-                <svg height="700px" width="900px"></svg>
+                <svg></svg>
             </div>
-            <div style="flex: 1">
+            <div id="related" style="flex: 1">
                 <ul class="history">
-                    <a href="">Pomodoro</a> er nevnt i disse artiklene:
+                    <a href="">XXXX</a> er nevnt i disse artiklene:
                     <ul>
                         <li><a href="">Nevroplastisitet</a></li>
                         <li><a href="">Focused vs Diffused mindset</a></li>
@@ -172,76 +292,7 @@ function updateMappageView() {
         </div>
     `;
 
-    for(let rel of model.keyword_relations){
-        if(rel.idxA == model.app.pages.mappage.selectedKeyword) {
-            simStuff.links.add({ source: model.keywords[rel.idxA], target: model.keywords[rel.idxB] });
-            for(let rel2 of model.keyword_relations) if(rel2.idxA == rel.idxB || rel2.idxB == rel.idxB)
-                simStuff.links.add({ source: model.keywords[rel2.idxA], target: model.keywords[rel2.idxB] });
-        }
-        if(rel.idxB == model.app.pages.mappage.selectedKeyword) {
-            simStuff.links.add({ source: model.keywords[rel.idxA], target: model.keywords[rel.idxB] });
-            for(let rel2 of model.keyword_relations) if(rel2.idxA == rel.idxA || rel2.idxB == rel.idxA)
-                simStuff.links.add({ source: model.keywords[rel2.idxA], target: model.keywords[rel2.idxB] });
-        }        
-    } 
-
-    simStuff.svg = d3.select("svg");
-
-    simStuff.linkSvg = simStuff.svg
-        .selectAll("line")
-        .data(simStuff.links)
-        .enter()
-        .append("line")
-        .attr("stroke-width", d => 2)
-        .style("stroke", "black")
-        .attr("transform", (d, i) => "translate(400,400)");
-
-    const nodeSvg = simStuff.svg
-        .selectAll("g")
-        .data(model.keywords)
-        .enter()
-        .append("a")
-        .attr("href", (_, i) => `javascript: model.app.pages.mappage.selectedKeyword = ${i}; refreshSim()`)
-        .append("g")
-        .attr("transform", (d, i) => `translate(400, ${i * 20})`); // Adjust the Y position as needed
-
-    nodeSvg
-        .append("rect")
-        .attr("x", -15)
-        .attr("y", -10)
-        .attr("width", 30) // Adjust the width as needed
-        .attr("height", 30) // Adjust the height as needed
-        .attr("fill", "var(--foreground)"); // Adjust the background color as needed
-
-    nodeSvg
-        .append("text")
-        .attr("text-anchor", "middle")
-        .attr("dy", "0.5em")
-        .attr("fill", "#1095C1")
-        .on("mouseover", d => d3.select(event.currentTarget).style("outline", "dotted 3px var(--lightblue)"))
-        .on("mouseout", d => d3.select(event.currentTarget).style("outline", ""))
-        .text((d) => d.name);
-
-
-    simStuff.linkForce = d3.forceLink(Array.from(simStuff.links)).distance(200);
-
-    simStuff.simulation = d3.forceSimulation(model.keywords)
-        .force("charge", d3.forceManyBody().strength(-100))
-        .force("link", simStuff.linkForce)
-        .force("center", d3.forceCenter())
-        .on("tick", ticked);
-
-    function ticked() {
-        simStuff.linkSvg
-            .attr("x1", d => d.source.x)
-            .attr("y1", d => d.source.y)
-            .attr("x2", d => d.target.x)
-            .attr("y2", d => d.target.y);
-        nodeSvg
-            .attr("transform", d => `translate(${Math.max(0, Math.min(1000, d.x+400))}, ${Math.max(0, Math.min(1000, d.y+400))})`);
-    }
-    
-
+    graph.setup();
 }
 
 let views = new Map([

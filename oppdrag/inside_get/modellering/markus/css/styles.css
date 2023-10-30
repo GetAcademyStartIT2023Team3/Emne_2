@@ -3,6 +3,7 @@
     --foreground:  #141E26;
     --foreground_light: #19232B;
     --lightblue: #1095C1;
+    --highlight: #F44E01;
     background: var(--background);
     color: #BBC6CE;
 }
