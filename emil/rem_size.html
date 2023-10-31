@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<!--
+    Rem tar utgangspunkt i "default" font-size globalt for html dokument.
+    Denne "base"-verdien kan endres i html-taggen.
+    Prøve å endre font-size, for eksempel fra 16px til 25px.
+    Du vil set at alle stiler som bruker "rem" blir påvirket på grunn av at du endret basen fra 16px til 25px.
+-->
+<html lang="en" style="font-size: 16px">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rem testing</title>
+</head>
+<body>
+    <div style="background-color: rgb(255, 231, 218); height: 2rem">Denne div-en har høyden 2 rem, dobbelt så stor som basen på 1 rem</div>
+    <div style="background-color: rgb(205, 251, 251); height: 2.5rem">Denne div-en har høyden 2.5 rem, 2.5 ganger større enn basen</div>
+    <div style="background-color: rgb(255, 231, 218); height: 3rem">Denne div-en har høyden 3 rem, tre ganger større enn basen</div>
+    <div style="background-color: rgb(205, 251, 251); height: 5rem">Denne div-en har høyden 5 rem, 5 ganger større enn basen</div>
+    <div style="background-color: rgb(255, 231, 218); height: 25px">Denne div-en har høyde 25 piksler, den blir ikke påvirket</div>
+</body>
+</html>
