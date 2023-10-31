@@ -149,3 +149,53 @@ class Graph {
     }
 }
 let graph;
+
+function updateRelatedSubview() {
+    let selected = model.app.pages.mappage.selectedKeyword;
+    let related = document.getElementById("related");
+    let listHtml = "";
+    for(let article of model.articles) if(article.keywords.some((e) => e == selected)) {
+        listHtml += /*html*/`<li><a href="javascript: graph = null; changePage('article'); model.app.pages.articlePage.selectedArticle = ${article.id}; updateView();">${article.name}</a></li>`;
+    }
+    related.innerHTML = /*html*/`
+        <div class="container history">
+            <h4>${model.keywords[selected].name} er nevnt i disse artiklene:</h4>
+            <ul>
+                ${listHtml}
+            </ul> 
+        </div>
+    `;
+}
+
+function updateGraphView() {
+    let app = document.getElementById("app");
+    
+    app.innerHTML = /*html*/`
+        ${createTopbarHtml()}
+        <div class="hrz">
+            <div style="flex: 1; min-width: 20px"></div>
+            <div class="container">
+                <div style="position: relative">
+                    <div style="position: absolute; right: 20px;">
+                        <!-- Position relative triks -->
+                    </div>
+                </div>
+                <div style="flex: 3; min-width: 20px"></div>
+                <svg></svg>
+            </div>
+            <div id="related" style="flex: 1">
+                <ul class="history">
+                    <a href="">XXXX</a> er nevnt i disse artiklene:
+                    <ul>
+                        <li><a href="">Nevroplastisitet</a></li>
+                        <li><a href="">Focused vs Diffused mindset</a></li>
+                        <li><a href="">Oppgave 4</a></li>
+                    </ul>
+                </ul>
+            </div>
+            <div style="flex: 1; min-width: 20px"></div>
+        </div>
+    `;
+    graph = new Graph();
+    graph.setup();
+}
