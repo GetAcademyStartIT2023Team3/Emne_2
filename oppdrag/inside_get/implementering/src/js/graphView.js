@@ -44,7 +44,7 @@ class Graph {
             .force("collide", d3.forceCollide().radius(60).strength(0.1))
             .on("tick", this.ticked.bind(this));
 
-        this.refreshSimulation(model.app.pages.mappage.selectedKeyword);
+        this.refreshSimulation(model.app.pages.graphPage.selectedKeyword);
     }
 
     ticked() {
@@ -94,7 +94,7 @@ class Graph {
             .attr("text-anchor", "middle")
             .attr("dy", "0.5em")
             .attr("fill", (d, i) => {
-                let selected = model.app.pages.mappage.selectedKeyword;
+                let selected = model.app.pages.graphPage.selectedKeyword;
                 if (i == selected) return "var(--highlight)";
                 else if (this.oneAway.some((e) => e == i)) return "#FF00FF";
                 return "var(--lightblue)";
@@ -105,9 +105,9 @@ class Graph {
     }
 
     refreshSimulation(clicked) {
-        model.app.pages.mappage.selectedKeyword = clicked;
+        model.app.pages.graphPage.selectedKeyword = clicked;
         updateRelatedSubview();
-        let selected = model.app.pages.mappage.selectedKeyword;
+        let selected = model.app.pages.graphPage.selectedKeyword;
         this.links.length = 0;
 
         this.oneAway = [];
@@ -151,7 +151,7 @@ class Graph {
 let graph;
 
 function updateRelatedSubview() {
-    let selected = model.app.pages.mappage.selectedKeyword;
+    let selected = model.app.pages.graphPage.selectedKeyword;
     let related = document.getElementById("related");
     let listHtml = "";
     for(let article of model.articles) if(article.keywords.some((e) => e == selected)) {

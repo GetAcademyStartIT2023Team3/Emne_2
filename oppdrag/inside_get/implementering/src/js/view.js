@@ -1,8 +1,8 @@
 let views = {
-    "main": updateMainpageView,
-    "map": updateMappageView,
-    "plan": updatePlanpageView,
-    "article": updateArticlepageView,
+    "main": updateGraphView,
+    "map": updateGraphView,
+    "plan": updateGraphView,
+    "article": updateGraphView,
 };
 
 function updateView() {
