@@ -28,10 +28,6 @@ function mainContent(atomId) {
     return html;
 }
 
-console.log(createArticleMainContent(4))
-function createArticleMainContent(index) {
-    let currentArticle = index - 1;
-    let html = '';
     /*
     Iterere gjennom model.articles[i],
     deretter iterere atoms[i].
@@ -44,37 +40,49 @@ function createArticleMainContent(index) {
     sjekk type,
     deretter generere HTML. (type==text) html += <p>atom.text</p>
     */
-   
 
-    for (let i = 0; i < model.articles[currentArticle].atoms[0].length; i++) {
-        let articleAtom = model.articles[currentArticle].atoms[0][i];
-        for (let j = 0; j < model.atoms.length; j++) {
-            if (articleAtom == model.atoms[j].id) {
-                if (model.atoms[j].type == 'text') {
-                    html += `<p>${model.atoms[j].atom.text}</p>`;
-                } else if (model.atoms[j].type == 'imageHTTP') {
-                    html += `<img src="${model.atoms[j].atom.ref}" 
-                    alt="${model.atoms[j].atom.text}" width="75%">`;
+function createArticleMainContent(index) {
+    let html = '';
+    let currentArticle = index - 1;
+    let articleAtoms = model.articles[currentArticle].atoms
+    let atoms = model.atoms
+
+    for (let array of articleAtoms) {
+        console.log(array)
+        for (let element of array) {
+            for (let obj of atoms) {
+                if (element == obj.id) {
+                    html += functionFromType(obj)
                 }
             }
         }
     }
+
+    // for (let j = 0; j < model.atoms.length; j++) {
+    //     if (element == model.atoms[j].id) {
+    //         html += functionFromType(model.atoms[j])
+    //     }
+    // }
+
+    // for (let i = 0; i < model.articles[currentArticle].atoms[0].length; i++) {
+    //     let articleAtom = model.articles[currentArticle].atoms[0][i];
+    //     // console.log(articleAtom);
+    //     for (let j = 0; j < model.atoms.length; j++) {
+    //         console.log(model.atoms[j])
+    //         if (articleAtom == model.atoms[j].id) {
+    //             html += functionFromType(model.atoms[j])
+    //         }
+    //     }
+    // }
     return html;
 }
 
-/* <p class="content-text">
-${atoms[0].atom.text}
-</p>
-<img src="${atoms[1].atom.ref}" alt="${atoms[1].atom.text}" width="75%">
-<p class="content-text">
-${atoms[2].atom.text} ${atoms[2].atom.ref}
-</p>
-<p>
-${atoms[3].atom.text}
-</p>
-<p>
-${atoms[4].atom.text}
-</p>
-<p>
-${atoms[5].atom.title} ${atoms[5].atom.ref}
-</p> */
+function functionFromType(atomIndex) {
+    let type = atomIndex.type
+    let atom = atomIndex.atom
+    if(type == "text") return `<p>${atom.text} ${atom.ref}</p>`;
+    else if(type == "imageHTTP") return `<img src="${atom.ref}" alt="${atom.text}" width="75%">`;
+    else if(type == "imageAsset") return `<img src="${atom.ref}" alt="${atom.text}" width="75%">`;
+    else if(type == "youtube") return `<h2>${atom.title}</h2><iframe src="${atom.ref}" width="560" height="315" frameborder="0" allowfullscreen></iframe>`;
+    else if(type == "askChoices") return ``;
+}
