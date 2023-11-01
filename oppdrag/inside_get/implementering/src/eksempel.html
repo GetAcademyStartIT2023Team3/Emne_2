@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 10px;
+        }
+        .horizontal {
+            display: flex;
+        }
+        .center {
+            justify-content: center;
+        }
+        .container {
+            margin: 10px;
+            background: gray;
+        }
+    </style>
+</head>
+<body>
+    <div class="horizontal center">
+        <div style="flex: 1"></div>
+        <div style="flex: 3">
+            <header class="horizontal center">
+                <div style="flex: 1">
+
+                </div>
+                <div style="flex: 3">
+                    <nav class="horizontal center">
+                        <a href="">Student</a>
+                        ...
+                    </nav>
+                    <nav class="horizontal center">
+                        <a href="">Tilbake til ukeplan</a>
+                    </nav>
+                </div>
+                <div style="flex: 1">
+                    <details>
+                        <summary>epost@epost.epost</summary>
+                        Test
+                    </details>
+                    <div class="horizontal center">
+                        <button>🠈</button>
+                        <button>🠊</button>
+                        <input type="text"/>
+                    </div>
+                </div>
+            </header>
+            <div class="horizontal center">
+                <div class="container" style="flex: 1">
+                    <h2>Notater</h2>
+                    <textarea class="notes">
+                    </textarea>
+                </div>
+                <div class="container" style="flex: 3">
+                    <h1>Pomodoro</h1>
+                    ...
+                </div>
+                <div style="flex: 1">
+                    <div class="container">
+                        <h4>Tenkning og lering</h4>
+                        <nav>
+                            <a href="">Problemlosning</a>
+                            ...
+                        </nav>
+                    </div>
+                    <div class="container">
+                        <h4>Relaterte Artikler</h4>
+                        <nav>
+                            <a href="">Lering</a>
+                            ...
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <footer class="horizontal center">
+                <button>🠈</button>
+                <a href="">1</a>
+                <a href="">2</a>
+                <a href="">3</a>
+                <button>🠊</button>
+            </footer>
+            </div>
+        <div style="flex: 1"></div>
+    </div>
+</body>
+</html>

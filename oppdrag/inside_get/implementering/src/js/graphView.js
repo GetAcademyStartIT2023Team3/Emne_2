@@ -170,9 +170,7 @@ function updateRelatedSubview() {
 }
 
 function updateGraphView() {
-    let app = document.getElementById("app");
-    
-    app.innerHTML = /*html*/`
+    return /*html*/`
         ${createTopbarHtml()}
         <div class="hrz">
             <div style="flex: 1; min-width: 20px"></div>
@@ -198,6 +196,5 @@ function updateGraphView() {
             <div style="flex: 1; min-width: 20px"></div>
         </div>
     `;
-    graph = new Graph();
-    graph.setup();
+
 }
