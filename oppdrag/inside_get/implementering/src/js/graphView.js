@@ -1,3 +1,5 @@
+let graphPage = model.app.pages.graphPage;
+
 class Graph {
     constructor() {
         this.nodes = [];

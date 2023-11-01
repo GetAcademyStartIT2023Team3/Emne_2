@@ -41,7 +41,7 @@ const model = {
     ],
 
     keywords: [
-        { name: "Psykologisk Trygghet"},
+        { name: "Psykologisk Trygghet" },
         { name: "Psykologi" },
         { name: "Studieteknikker" },
         { name: "Pomodoro" },
@@ -67,27 +67,27 @@ const model = {
 
 
     articles: [
-         { id: 1, name: 'Pomodoro',      topicId: 1,  atoms: [[1, 3], [2, 4, 5]],           keywords: [0, 2,3,4],           },
-         { id: 2, name: 'Læring',        topicId: 2,  atoms: [[6, 12], [7, 13]],            keywords: [1,2,3],              },
-         { id: 3, name: 'Feiling',       topicId: 1,  atoms: [[11, 12]],                    keywords: [0, 3],               },
-         { id: 4, name: 'Samarbeid',     topicId: 3,  atoms: [[8, 9, 10]],                  keywords: [0, 10,11]            },
-         { id: 5, name: 'Test',          topicId: 3,  atoms: [[8, 9, 10]],                  keywords: [0, 12,13]            },
-         { id: 6, name: 'ABCDEFG',       topicId: 3,  atoms: [[8, 9, 10]],                  keywords: [0, 12]               },
-         { id: 7, name: 'XXXXXXX',       topicId: 3,  atoms: [[8, 9, 10]],                  keywords: [0, 3,14,15]          },
+         { id: 1, name: 'Pomodoro',      topicId: 1,  atoms: [[3, 1], [2, 4, 5]],           keywords: [0, 2, 3, 4],           },
+         { id: 2, name: 'Læring',        topicId: 2,  atoms: [[6, 12], [7, 13]],            keywords: [1, 2, 3],              },
+         { id: 3, name: 'Feiling',       topicId: 1,  atoms: [[11, 12]],                    keywords: [0, 3],                 },
+         { id: 4, name: 'Samarbeid',     topicId: 3,  atoms: [[8, 9, 10]],                  keywords: [0, 10, 11]             },
+         { id: 5, name: 'Test',          topicId: 3,  atoms: [[8, 9, 10]],                  keywords: [0, 12, 13]             },
+         { id: 6, name: 'ABCDEFG',       topicId: 3,  atoms: [[8, 9, 10]],                  keywords: [0, 12]                 },
+         { id: 7, name: 'XXXXXXX',       topicId: 3,  atoms: [[8, 9, 10]],                  keywords: [0, 3, 14, 15]          },
     ],
 
     atoms: [
-       { id: 1,  type: 'text',       atom: { title: 'Aktiv-lytting', text: 'For løkker er viktig i mange situasjoner. Bla bla..' } },
-       { id: 2,  type: 'imageHTTP',  atom: { title: 'Bildetittel',   text: 'dette er et fint motivasjons-bilde',                  ref: 'https://getacademy.no/hubfs/GET_RGB_logo-01-2.png' } },
-       { id: 3,  type: 'imageAsset', atom: { title: 'Bildetittel',   text: 'dette er et fint hjerne-bilde',                       ref: './assets/image/123.png' } },
-       { id: 4,  type: 'youtube',    atom: { title: 'Filmtittel',    text: 'Mere om pomodoro som ikke ble nevnt i video',         ref: 'youtube.com/dHRQLHaC86c' } },
-       { id: 5,  type: 'videoAsset', atom: { title: 'Filmtittel',    text: 'Mere om nevroplastisitet som ikke ble nevnt i video', ref: './assets/video/123.mov' } },
-       { id: 6,  type: 'text',       atom: { title: 'Feynman-Teknikken',  text: 'Teknikken går ut på å ofte gå gjennom hva du har lært og prøve å forenkle det.' } },
-       { id: 7,  type: 'imageAsset', atom: { title: 'Bildetittel',   text: 'dette er et fint hjerne-bilde',                       ref: './assets/image/123.png' } },
-       { id: 8,  type: 'text',       atom: { title: "Weiner's Modell",     text: 'Attribusjon brukes i psykologien som beskrivelse av hvordan personer årsaksforklarer handlinger og sosiale hendelser.' } },
-       { id: 9,  type: 'text',       atom: { title: 'Parafrasering', text: 'Man kan vise at man lytter ved å parafrasere det som ble sagt. Blabla..' } },
-       { id: 10, type: 'imageAsset', atom: { title: 'Pause Eskil',   text: 'Eskil må huske å ta pause fra jobbinga ',             ref: './assets/image/pauseEskil.png' } },
-       { id: 11, type: 'askChoices', atom: { ask: 'hva er et "growth mindset"?', correct: 1, choices: ['tanken om at evner gror av seg selv', 'tanken om at du kan bli bedre på noe hvis du prøver', 'å tenke at alle er bedre enn deg'] } },
+       { id: 1,  type: 'text',          title: 'Aktiv-lytting',       text: 'For løkker er viktig i mange situasjoner. Bla bla..' },
+       { id: 2,  type: 'imageHTTP',     title: 'Bildetittel',         text: 'dette er et fint motivasjons-bilde',                  ref: 'https://getacademy.no/hubfs/GET_RGB_logo-01-2.png' },
+       { id: 3,  type: 'imageAsset',    title: 'Bildetittel',         text: 'dette er et fint hjerne-bilde',                       ref: './assets/image/123.png' },
+       { id: 4,  type: 'youtube',       title: 'Filmtittel',          text: 'Mere om pomodoro som ikke ble nevnt i video',         ref: 'youtube.com/dHRQLHaC86c' },
+       { id: 5,  type: 'videoAsset',    title: 'Filmtittel',          text: 'Mere om nevroplastisitet som ikke ble nevnt i video', ref: './assets/video/123.mov' },
+       { id: 6,  type: 'text',          title: 'Feynman-Teknikken',   text: 'Teknikken går ut på å ofte gå gjennom hva du har lært og prøve å forenkle det.' },
+       { id: 7,  type: 'imageAsset',    title: 'Bildetittel',         text: 'dette er et fint hjerne-bilde',                       ref: './assets/image/123.png' },
+       { id: 8,  type: 'text',          title: "Weiner's Modell",     text: 'Attribusjon brukes i psykologien som beskrivelse av hvordan personer årsaksforklarer handlinger og sosiale hendelser.' },
+       { id: 9,  type: 'text',          title: 'Parafrasering',       text: 'Man kan vise at man lytter ved å parafrasere det som ble sagt. Blabla..' },
+       { id: 10, type: 'imageAsset',    title: 'Pause Eskil',         text: 'Eskil må huske å ta pause fra jobbinga ',             ref: './assets/image/pauseEskil.png' },
+       { id: 11, type: 'askChoices',    ask: 'hva er et "growth mindset"?', correct: 1, choices: ['tanken om at evner gror av seg selv', 'tanken om at du kan bli bedre på noe hvis du prøver', 'å tenke at alle er bedre enn deg'] },
     ],
 }
 

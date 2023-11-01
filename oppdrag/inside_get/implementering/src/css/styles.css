@@ -1,0 +1,62 @@
+:root {
+    --background: #11191F;
+    --foreground:  #141E26;
+    --foreground_light: #19232B;
+    --lightblue: #1095C1;
+    --highlight: #F44E01;
+    background: var(--background);
+    color: #BBC6CE;
+}
+* {
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+a {
+    color: var(--lightblue);
+}
+.hrz {
+    display: flex;
+}
+.center {
+    justify-content: center;
+}
+nav {
+    font-size: 14pt;
+    display: flex;
+    justify-content: center;
+}
+.even {
+    justify-content: space-evenly;
+}
+.container {
+    font-size: 1vw;
+    margin: 10px;
+    padding: 10px;
+    background: var(--foreground);
+    > div > div:nth-of-type(odd), > li:nth-child(odd) {
+        background: var(--foreground_light);
+    }
+}
+.notes {
+    margin: 10px;
+    background: palegoldenrod;
+    color: black; 
+    text-align: center; 
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+}
+
+.dark {
+    padding: 10px;
+    background: var(--background) !important;
+}
+
+.padding {
+    flex-shrink: 0.1;
+    min-width: 20px;
+}
+
+@media screen and (min-width: 700px) {
+    .padding {
+        width: 5px;
+    }
+}
