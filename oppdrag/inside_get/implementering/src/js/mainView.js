@@ -1,3 +1,3 @@
 function updateMainView() {
-    return 'DETTE ER MAIN VIEW';
+    return 'DETTE ER HOVEDSIDEN';
 }

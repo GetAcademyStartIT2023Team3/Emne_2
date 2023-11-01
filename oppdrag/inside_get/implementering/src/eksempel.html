@@ -4,21 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        * {
-            margin: 10px;
-        }
-        .horizontal {
-            display: flex;
-        }
-        .center {
-            justify-content: center;
-        }
-        .container {
-            margin: 10px;
-            background: gray;
-        }
-    </style>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <div class="horizontal center">
@@ -26,18 +12,21 @@
         <div style="flex: 3">
             <header class="horizontal center">
                 <div style="flex: 1">
-
+                    <img src="https://inside.getacademy.no/img/logo.png" style="width: 9rem"/>
                 </div>
-                <div style="flex: 3">
-                    <nav class="horizontal center">
+                <div style="flex: 3" class="vertical">
+                    <nav class="horizontal center" style="gap: 10px">
                         <a href="">Student</a>
-                        ...
+                        <a href="">Emne 1</a>
+                        <a href="">Emne 2</a>
+                        <a href="">NK</a>
+                        <a href="">Osv...</a>
                     </nav>
                     <nav class="horizontal center">
                         <a href="">Tilbake til ukeplan</a>
                     </nav>
                 </div>
-                <div style="flex: 1">
+                <div style="flex: 1" class="vertical">
                     <details>
                         <summary>epost@epost.epost</summary>
                         Test
@@ -45,21 +34,20 @@
                     <div class="horizontal center">
                         <button>🠈</button>
                         <button>🠊</button>
-                        <input type="text"/>
+                        <input type="text" style="width: 100%"/>
                     </div>
                 </div>
             </header>
             <div class="horizontal center">
                 <div class="container" style="flex: 1">
                     <h2>Notater</h2>
-                    <textarea class="notes">
-                    </textarea>
+                    <textarea class="notes" style="width:100%; height: 500px"></textarea>
                 </div>
                 <div class="container" style="flex: 3">
                     <h1>Pomodoro</h1>
                     ...
                 </div>
-                <div style="flex: 1">
+                <div style="flex: 1; padding: 0; margin: 0">
                     <div class="container">
                         <h4>Tenkning og lering</h4>
                         <nav>
@@ -76,7 +64,7 @@
                     </div>
                 </div>
             </div>
-            <footer class="horizontal center">
+            <footer class="horizontal center" style="gap: 10px">
                 <button>🠈</button>
                 <a href="">1</a>
                 <a href="">2</a>

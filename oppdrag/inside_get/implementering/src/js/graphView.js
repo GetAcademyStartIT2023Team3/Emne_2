@@ -1,7 +1,8 @@
-let graphPage = model.app.pages.graphPage;
+let graphPage;
 
 class Graph {
     constructor() {
+        graphPage = model.app.pages.graphPage;
         this.nodes = [];
         this.links = [];
         this.oneAway = [];
@@ -10,9 +11,7 @@ class Graph {
         this.linkSvg = null;
         this.linkForce = null;
         this.simulation = null;
-    }
 
-    setup() {
         this.svg = d3.select("svg")
             .attr("viewBox", [-750, -500, 1500, 1000])
             .attr("width", 1500)
@@ -46,7 +45,7 @@ class Graph {
             .force("collide", d3.forceCollide().radius(60).strength(0.1))
             .on("tick", this.ticked.bind(this));
 
-        this.refreshSimulation(model.app.pages.graphPage.selectedKeyword);
+        this.refreshSimulation(graphPage.selectedKeyword);
     }
 
     ticked() {
@@ -88,7 +87,7 @@ class Graph {
             .attr("y", -10)
             .attr("width", 30)
             .attr("height", 30)
-            .attr("fill", "var(--foreground)");
+            .attr("fill", "var(--color_foreground)");
 
         this.nodeSvg
             .append("text")
@@ -96,10 +95,10 @@ class Graph {
             .attr("text-anchor", "middle")
             .attr("dy", "0.5em")
             .attr("fill", (d, i) => {
-                let selected = model.app.pages.graphPage.selectedKeyword;
-                if (i == selected) return "var(--highlight)";
+                let selected = graphPage.selectedKeyword;
+                if (i == selected) return "var(--color_getOrange)";
                 else if (this.oneAway.some((e) => e == i)) return "#FF00FF";
-                return "var(--lightblue)";
+                return "var(--color_links)";
             })
             .on("mouseover", (event, d) => d3.select(event.currentTarget).style("outline", "dotted 3px var(--lightblue)"))
             .on("mouseout", (event, d) => d3.select(event.currentTarget).style("outline", ""))
@@ -107,9 +106,9 @@ class Graph {
     }
 
     refreshSimulation(clicked) {
-        model.app.pages.graphPage.selectedKeyword = clicked;
+        graphPage.selectedKeyword = clicked;
         updateRelatedSubview();
-        let selected = model.app.pages.graphPage.selectedKeyword;
+        let selected = graphPage.selectedKeyword;
         this.links.length = 0;
 
         this.oneAway = [];
@@ -150,17 +149,16 @@ class Graph {
         this.simulation.alpha(0.5).restart();
     }
 }
-let graph;
 
 function updateRelatedSubview() {
-    let selected = model.app.pages.graphPage.selectedKeyword;
+    let selected = graphPage.selectedKeyword;
     let related = document.getElementById("related");
     let listHtml = "";
     for(let article of model.articles) if(article.keywords.some((e) => e == selected)) {
         listHtml += /*html*/`<li><a href="javascript: graph = null; changePage('article'); model.app.pages.articlePage.selectedArticle = ${article.id}; updateView();">${article.name}</a></li>`;
     }
     related.innerHTML = /*html*/`
-        <div class="container history">
+        <div class="container">
             <h4>${model.keywords[selected].name} er nevnt i disse artiklene:</h4>
             <ul>
                 ${listHtml}
@@ -171,29 +169,17 @@ function updateRelatedSubview() {
 
 function updateGraphView() {
     return /*html*/`
-        ${createTopbarHtml()}
-        <div class="hrz">
-            <div style="flex: 1; min-width: 20px"></div>
-            <div class="container">
+        <div class="horizontal center" onload="graph = null;">
+            <div class="container" style="flex: 3">
                 <div style="position: relative">
                     <div style="position: absolute; right: 20px;">
-                        <!-- Position relative triks -->
+                        <!-- Position relative triks -->Test
                     </div>
                 </div>
-                <div style="flex: 3; min-width: 20px"></div>
                 <svg></svg>
             </div>
-            <div id="related" style="flex: 1">
-                <ul class="history">
-                    <a href="">XXXX</a> er nevnt i disse artiklene:
-                    <ul>
-                        <li><a href="">Nevroplastisitet</a></li>
-                        <li><a href="">Focused vs Diffused mindset</a></li>
-                        <li><a href="">Oppgave 4</a></li>
-                    </ul>
-                </ul>
+            <div id="related" class="container" style="flex: 1">
             </div>
-            <div style="flex: 1; min-width: 20px"></div>
         </div>
     `;
 

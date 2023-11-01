@@ -1,62 +1,35 @@
 :root {
-    --background: #11191F;
-    --foreground:  #141E26;
-    --foreground_light: #19232B;
-    --lightblue: #1095C1;
-    --highlight: #F44E01;
-    background: var(--background);
-    color: #BBC6CE;
-}
-* {
-    border-radius: 5px;
-    box-sizing: border-box;
+    --color_getOrange: #F44E01;
+    --color_background: #11191F;
+    --color_foreground: #141E26;
+    --color_light_foreground: #19232B;
+    --color_links: #1095C1;
+    --color_text: #BBC6CE;
+    --color_unfocused: #3C4651;
+    background: var(--color_background);
+    color: var(--color_text);
 }
 a {
-    color: var(--lightblue);
+    color: var(--color_links);
 }
-.hrz {
+
+.horizontal {
     display: flex;
+}
+.vertical {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 }
 .center {
     justify-content: center;
 }
-nav {
-    font-size: 14pt;
-    display: flex;
-    justify-content: center;
-}
-.even {
-    justify-content: space-evenly;
-}
+
 .container {
-    font-size: 1vw;
     margin: 10px;
-    padding: 10px;
-    background: var(--foreground);
-    > div > div:nth-of-type(odd), > li:nth-child(odd) {
-        background: var(--foreground_light);
-    }
+    background: var(--color_foreground);
 }
+
 .notes {
-    margin: 10px;
     background: palegoldenrod;
-    color: black; 
-    text-align: center; 
-    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
-}
-
-.dark {
-    padding: 10px;
-    background: var(--background) !important;
-}
-
-.padding {
-    flex-shrink: 0.1;
-    min-width: 20px;
-}
-
-@media screen and (min-width: 700px) {
-    .padding {
-        width: 5px;
-    }
 }

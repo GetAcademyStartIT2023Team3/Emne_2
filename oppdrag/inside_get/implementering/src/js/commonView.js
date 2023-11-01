@@ -5,28 +5,38 @@ function createTopbarHtml() {
         return model.app.selectedPage != page ? /*html*/`<a href="javascript: changePage('${page}')">${text}</a>` : `${text}`;
     }
     return /*html*/`
-        <div class ="hrz" style="justify-content: space-between; height: 100px">
-            <div class="padding"></div>
-            <img src="https://inside.getacademy.no/img/logo.png" style="object-fit: contain; flex: 5"/>
-            <div style="flex: 5"></div>
-            <details style="flex: 5"><summary>xxxxxxx@getacademy.no</summary><a href="">Logg ut</a></details>
-            <div class="padding"></div>
-        </div>
-        <nav>
-            <pre><a href="">Student</a> | </pre>
-            <pre><a href="">Emne 1</a> | </pre>
-            <pre><a href="">Emne 2</a> | </pre>
-            <pre><a href="">Emne 3</a> | </pre>
-            <pre>NK | </pre>
-            <pre><a href="">Bonus</a> | </pre>
-            <pre><a href="">Oblig</a> | </pre>
-            <pre><a href="">Opptak</a></pre>
-        </nav>
-        <nav>
-            <pre>${createLinkHtml("Hovedside", "main")} | </pre>
-            <pre>${createLinkHtml("Ukeplan", "plan")} | </pre>
-            <pre>${createLinkHtml("Kart", "map")}</pre>
-        </nav>
+        <header class="horizontal center">
+            <div style="flex: 1">
+                <img src="https://inside.getacademy.no/img/logo.png" style="width: 9rem; object-fit: contain"/>
+            </div>
+            <div style="flex:3" class="vertical">
+                <nav class="horizontal center">
+                    <pre><a href="">Student</a> | </pre>
+                    <pre><a href="">Emne 1</a> | </pre>
+                    <pre><a href="">Emne 2</a> | </pre>
+                    <pre><a href="">Emne 3</a> | </pre>
+                    <pre>NK | </pre>
+                    <pre><a href="">Bonus</a> | </pre>
+                    <pre><a href="">Oblig</a> | </pre>
+                    <pre><a href="">Opptak</a></pre>
+                </nav>
+                <nav class="horizontal center">
+                    <pre>${createLinkHtml("Hovedside", "main")} | </pre>
+                    <pre>${createLinkHtml("Ukeplan", "weeklySchedule")} | </pre>
+                    <pre>${createLinkHtml("Kart", "graph")}</pre>
+                </nav>
+            </div>
+            <div style="flex: 1" class="vertical">
+                <details>
+                    <summary>epost@epost.epost</summary>
+                    Test
+                </details>
+                <div class="horizontal center">
+                    <button>🠈</button>
+                    <button>🠊</button>
+                    <input type="text" style="width: 100%"/>
+                </div>
+            </div>
+        </header>
     `;
 }
-

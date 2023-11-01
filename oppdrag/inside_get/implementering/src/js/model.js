@@ -2,12 +2,12 @@
 
 const model = {
     app: {
-        selectedPage: "graph",
+        selectedPage: "main",
         pages: {
             articlePage: {
                 selectedArticle: 1,
-                subjectIndex: 1,
-                selectedPage: 1,
+                topicIndex:      1,
+                selectedPage:    1,
             },
             mainPage: {
                 weekId: 1
@@ -28,9 +28,9 @@ const model = {
     curriculum: {
         startDate: '2023-08-07',
         weekPlan: [
-            { week: 1, content: { mandag: [4, 3], tirsdag: [1], onsdag: [2], torsdag: [7, 8], fredag: [5] } },
-            { week: 2, content: { mandag: [], tirsdag: [], onsdag: [], torsdag: [], fredag: [] } },
-            { week: 3, content: { mandag: [14, 13], tirsdag: [11], onsdag: [12], torsdag: [17, 18], fredag: [15] } },
+            { week: 1,   monday: [4, 3],     tuesday: [1],      wednesday: [2],       thursday: [7, 8],         friday: [5]        },
+            { week: 2,   monday: [],         tuesday: [],       wednesday: [],        thursday: [],             friday: []         },
+            { week: 3,   monday: [14, 13],   tuesday: [11],     wednesday: [12],      thursday: [17, 18],       friday: [15]       },
         ],
     },
 
@@ -51,11 +51,11 @@ const model = {
     ],
 
     keyword_relations: [
-        { idxA: 0, idxB: 3 },
-        { idxA: 0, idxB: 4 },
-        { idxA: 1, idxB: 2 },
-        { idxA: 3, idxB: 5 },
-        { idxA: 0, idxB: 5 },
+        { idxA:  0, idxB:  3 },
+        { idxA:  0, idxB:  4 },
+        { idxA:  1, idxB:  2 },
+        { idxA:  3, idxB:  5 },
+        { idxA:  0, idxB:  5 },
     ],
 
     fakeUser: {
@@ -67,13 +67,13 @@ const model = {
 
 
     articles: [
-         { id: 1, name: 'Pomodoro',  topicId: 1, atoms: [[3, 1], [2, 4, 5]], keywords: [0, 2, 3, 4],  },
-         { id: 2, name: 'Læring',    topicId: 2, atoms: [[6, 12], [7, 13]],  keywords: [1, 2, 3],     },
-         { id: 3, name: 'Feiling',   topicId: 1, atoms: [[11, 12]],          keywords: [0, 3],        },
-         { id: 4, name: 'Samarbeid', topicId: 3, atoms: [[8, 9, 10]],        keywords: [0, 10, 11]    },
-         { id: 5, name: 'Test',      topicId: 3, atoms: [[8, 9, 10]],        keywords: [0, 12, 13]    },
-         { id: 6, name: 'ABCDEFG',   topicId: 3, atoms: [[8, 9, 10]],        keywords: [0, 12]        },
-         { id: 7, name: 'XXXXXXX',   topicId: 3, atoms: [[8, 9, 10]],        keywords: [0, 3, 14, 15] },
+         { id: 1, name: 'Pomodoro',  topicId: 1,  atoms: [[3, 1], [2, 4, 5]],           keywords: [0, 2, 3, 4],       },
+         { id: 2, name: 'Læring',    topicId: 2,  atoms: [[6, 12], [7, 13]],            keywords: [1, 2, 3],          },
+         { id: 3, name: 'Feiling',   topicId: 1,  atoms: [[11, 12]],                    keywords: [0, 3],             },
+         { id: 4, name: 'Samarbeid', topicId: 3,  atoms: [[8, 9, 10]],                  keywords: [0, 10, 11]         },
+         { id: 5, name: 'Test',      topicId: 3,  atoms: [[8, 9, 10]],                  keywords: [0, 12, 13]         },
+         { id: 6, name: 'ABCDEFG',   topicId: 3,  atoms: [[8, 9, 10]],                  keywords: [0, 12]             },
+         { id: 7, name: 'XXXXXXX',   topicId: 3,  atoms: [[8, 9, 10]],                  keywords: [0, 3, 14, 15]      },
     ],
 
     atoms: [
