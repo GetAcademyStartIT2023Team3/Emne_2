@@ -4,7 +4,7 @@ function updateMainView() {
 
     let mainHtml = "";
     for(let topic of model.topics) {
-        mainHtml += /*html*/`<details><summary>${topic.name}</summary><div class="horizontal"><div class="vertical">`;
+        mainHtml += /*html*/`<details><summary>${topic.name}</summary><div class="hflex"><div class="vflex">`;
         for(let article of model.articles) if (article.topicId == topic.id) {
             mainHtml += /*html*/`<a href="">${article.name}</a>`;
         }
@@ -20,7 +20,7 @@ function updateMainView() {
             "Fredag" : "friday",
         }
         for(let [NO, EN] of Object.entries(days)) {
-            weekHtml += /*html*/`${NO}:<div class="vertical">`;
+            weekHtml += /*html*/`${NO}:<div class="vflex">`;
             
             for(let article of week[EN]) weekHtml += /*html*/`<a href="">${getTopic(getArticle(article).topicId).name} - ${getArticle(article).name}</a>`;
             weekHtml += /*html*/`</div>`;
@@ -34,7 +34,7 @@ function updateMainView() {
         recentHtml += /*html*/`<div>${getTopic(getArticle(seen.articleId).topicId).name} - <a href="">${getArticle(seen.articleId).name}</a></div>`;
     }
     return /*html*/`
-        <div class="horizontal center">
+        <div class="hflex center">
             <div class="container" style="flex: 3; height: 600px">
                 <div style="position: relative">
                     <div class="inset" style="position: absolute; right: 20px; width: 300px;">
@@ -49,7 +49,7 @@ function updateMainView() {
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum luctus, ipsum eget tempor ullamcorper, dui ante cursus neque, pretium imperdiet tellus justo vel lorem. Suspendisse blandit, velit ut dapibus accumsan, nibh sapien blandit nibh, accumsan mollis lorem ex imperdiet diam. Curabitur ac turpis ex.
                 </p>
                 <hr>
-                <div class="alternating vertical">
+                <div class="alternating vflex">
                     ${mainHtml}
                 </div>
             </div>

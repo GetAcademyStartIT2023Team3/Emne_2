@@ -9,6 +9,7 @@
     background: var(--color_background);
     color: var(--color_text);
 }
+
 a {
     color: var(--color_links);
 }
@@ -25,26 +26,27 @@ h1, h2, h3, h4, h5 {
     background: var(--color_light_foreground);
 }
 
-.horizontal {
+.hflex {
     display: flex;
 }
-.vertical {
+.vflex {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     gap: 10px;
 }
-
 .center {
     justify-content: center;
 }
 
 .container {
+    padding: 10px;
     margin: 10px;
     background: var(--color_foreground);
 }
 
 .inset {
+    padding: 10px;
     background: var(--color_background);
 }
 

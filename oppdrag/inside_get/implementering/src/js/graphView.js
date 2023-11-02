@@ -169,7 +169,7 @@ function updateRelatedSubview() {
 
 function updateGraphView() {
     return /*html*/`
-        <div class="horizontal center" onload="graph = null;">
+        <div class="hflex center" onload="graph = null;">
             <div class="container" style="flex: 3">
                 <div style="position: relative">
                     <div style="position: absolute; right: 20px;">

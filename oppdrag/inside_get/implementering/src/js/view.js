@@ -1,7 +1,7 @@
 function updateView() {
     let app = document.getElementById("app");
     app.innerHTML = /*html*/`
-        <div class="horizontal center">
+        <div class="hflex center">
             <div style="flex: 1"></div>
             <div style="flex: 3">
                 ${createTopbarHtml()}
