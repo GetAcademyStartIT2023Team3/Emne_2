@@ -30,7 +30,7 @@ const model = {
         weekPlan: [
             { week: 1,   monday: [4, 3],     tuesday: [2],      wednesday: [2],       thursday: [7, 3],         friday: [4]        },
             { week: 2,   monday: [],         tuesday: [],       wednesday: [],        thursday: [],             friday: []         },
-            { week: 3,   monday: [5, 1],   tuesday: [7],     wednesday: [6],      thursday: [4, 5],       friday: [6]       },
+            { week: 3,   monday: [5, 1],     tuesday: [7],      wednesday: [6],       thursday: [4, 5],         friday: [6]        },
         ],
     },
 
@@ -99,4 +99,3 @@ function showModel(title, data) {
         <hr style="margin-top: -1rem;">
     `;
 }
-
