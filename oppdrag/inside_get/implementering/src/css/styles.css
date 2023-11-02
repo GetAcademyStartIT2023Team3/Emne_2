@@ -13,6 +13,18 @@ a {
     color: var(--color_links);
 }
 
+h1, h2, h3, h4, h5 {
+    background: var(--color_background);
+}
+
+.alternating details:nth-child(odd) {
+    background: var(--color_light_foreground);
+}
+
+.alternating div:nth-child(odd) {
+    background: var(--color_light_foreground);
+}
+
 .horizontal {
     display: flex;
 }
@@ -20,7 +32,9 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    gap: 10px;
 }
+
 .center {
     justify-content: center;
 }
@@ -28,6 +42,10 @@ a {
 .container {
     margin: 10px;
     background: var(--color_foreground);
+}
+
+.inset {
+    background: var(--color_background);
 }
 
 .notes {
