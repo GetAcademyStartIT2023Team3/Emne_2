@@ -1,62 +1,73 @@
 function updateWeeklyScheduleView() {
     return /*HTML*/`
-    <div class="container">
+    <div class="w_container">
 
-        <div class="weekySchedule_content">
+        <div class="w_content w_item">
 
-            <div class="weeklySchedule_list">
-                <ul>
+            <div class="w_content_item1">
+                <ul class="w_list">
                     <li>
                         <h3>Mandag</h3>
-                        <a href="#">
-                            <div>Sammarbeid og kommunkasjon</div>
-                            <div>Kommunkasjon</div>
-                        </a>
-                        <a href="#">
-                            <div>XXXXX</div>
-                            <div>XXXXX</div>
-                        </a>
+                        <div class="w_flex">
+                            <a href="#">
+                                <div class="w_bold">Sammarbeid og kommunkasjon</div>
+                                <div>Kommunkasjon</div>
+                            </a>
+                            <a href="#">
+                                <div class="w_bold">XXXXX</div>
+                                <div>XXXXX</div>
+                            </a>
+                        </div>
                     </li>
                     <li>
                         <h3>Tirsdag</h3>
-                        <a href="#">
-                            <div>Tenknin og læring</div>
-                            <div>Nevroplastisitet</div>
-                        </a>
-                        <a href="#">
-                            <div>XXXXX</div>
-                            <div>XXXXX</div>
-                        </a>
+                        <div class="w_flex">
+                            <a href="#">
+                                <div class="w_bold">Tenknin og læring</div>
+                                <div>Nevroplastisitet</div>
+                            </a>
+                            <a href="#">
+                                <div class="w_bold">XXXXX</div>
+                                <div>XXXXX</div>
+                            </a>
+                        </div>
                     </li>
                     <li>
                         <h3>Onsdag</h3>
-                        <a href="#">
-                            <div>Sammarbeid og kommunkasjon</div>
-                            <div>Kritisk tenkning</div>
-                        </a>
-                        <a href="#">
-                            <div>XXXXX</div>
-                            <div>XXXXX</div>
-                        </a>
+                        <div class="w_flex">
+                            <a href="#">
+                                <div class="w_bold">Sammarbeid og kommunkasjon</div>
+                                <div>Kritisk tenkning</div>
+                            </a>
+                            <a href="#">
+                                <div class="w_bold">XXXXX</div>
+                                <div>XXXXX</div>
+                            </a>
+                        </div>
                     </li>
                     <li>
                         <h3>Torsdag</h3>
-                        <a href="#">
-                            <div>Sammarbeid og kommunkasjon</div>
-                            <div>Kommunkasjon</div>
-                        </a>
+                        <div class="w_flex">
+                            <a href="#">
+                                <div class="w_bold">Sammarbeid og kommunkasjon</div>
+                                <div>Kommunkasjon</div>
+                            </a>
+                        </div>
                     </li>
                     <li>
                         <h3>Fredag</h3>
-                        <a href="#">
-                            <div>Sammarbeid og kommunkasjon</div>
-                            <div>Kommunkasjon</div>
-                        </a>
+                        <div class="w_flex">
+                            <a href="#">
+                                <div class="w_bold">Sammarbeid og kommunkasjon</div>
+                                <div>Kommunkasjon</div>
+                            </a>
+                        </div>
                     </li>
                 </ul>
             </div>
 
-            <div class="weeklySchedule_#">
+            <div class="weeklySchedule_side">
+            
                 <div class="weeklySchedule_navbar">
                     <h2>Uke 42 - 2023:</h2>
                     <div>Uke 3 av 20</div>
@@ -80,24 +91,24 @@ function updateWeeklyScheduleView() {
             </div>
         </div>
 
-        <div class="weeklySchedule_sidebar">
-            <h2>Nyeste lest</h2>
-            <ul>
+        <div class="w_sidebar w_item">
+            <h2 class="w_header">Nyeste lest</h2>
+            <ul class="w_list w_alternating">
                 <li>
                     <a href="#">
-                        <div>Sammarbeid og kommunkasjon</div>
+                        <div class="w_bold">Sammarbeid og kommunkasjon</div>
                         <div>Kommunkasjon</div>
                     </a> 
                 </li>
                 <li>
                     <a href="#">
-                        <div>Tenknin og læring</div>
+                        <div class="w_bold">Tenknin og læring</div>
                         <div>Nevroplastisitet</div>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <div>Sammarbeid og kommunkasjon</div>
+                        <div class="w_bold">Sammarbeid og kommunkasjon</div>
                         <div>Kritisk Tenkning</div>
                     </a>
                 </li>            

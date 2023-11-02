@@ -20,3 +20,64 @@
     object-fit: none;
     object-position: 47% 24%;
 }
+
+a {
+    text-decoration: none;
+}
+
+.w_item {
+    text-align: center;
+    border-radius: 10px;
+    color: var(--white);
+}
+
+.w_flex {
+    display: flex;
+}
+
+.w_bold {
+    font-weight: bold;
+    color: var(--color_text);
+}
+
+.w_list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.w_container {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.w_content {
+    background: var(--color_foreground);
+    flex: 3;
+    display: flex;
+}
+
+.w_content_item1 {
+    flex: 3;
+}
+
+.weeklySchedule_side {
+    flex: 1;
+}
+
+.w_sidebar {
+    background: var(--color_foreground);
+    flex: 1;
+}
+
+.w_header {
+    background-color: var(--color_foreground);
+    margin: 1rem;
+}
+
+.w_alternating li:nth-child(odd) {
+    background-color: var(--color_light_foreground);
+}
