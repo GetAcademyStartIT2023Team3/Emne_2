@@ -18,19 +18,7 @@ class Graph {
             .attr("height", 1000)
             .attr("style", "max-width: 100%; height: auto");
 
-        for (let i = 0; i < 30; i++) {
-            let r = Math.floor(Math.random() * 5);
-            model.keywords.push({ name: "XXX" + "X".repeat(r) });
-        }
-
-        
         this.nodes = [...model.keywords];
-
-        for (let i = 0; i < 30; i++) {
-            let r1 = Math.floor(Math.random() * (this.nodes.length / 2));
-            let r2 = Math.floor(Math.random() * this.nodes.length);
-            model.keyword_relations.push({ idxA: r1, idxB: r2 });
-        }
 
         this.createLinks();
         this.createNodes();

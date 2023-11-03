@@ -10,9 +10,9 @@ function createArticleLink(articleId, topicStyle, extrajs) {
     if(!extrajs) extrajs = "";
     
     switch(topicStyle) {
-        case "none": return /*html*/`<a href="javascript: ${extrajs}; model.app.pages.articlePage.selectedArticle = ${articleId}; changePage('article');">${article.name}</a>`;
-        case "above": return /*html*/`<h4>${topic.name}</h4><a href="javascript: ${extrajs}; model.app.pages.articlePage.selectedArticle = ${articleId}; changePage('article');">${article.name}</a>`;
-        case "inline": return /*html*/`<a href="javascript: ${extrajs}; model.app.pages.articlePage.selectedArticle = ${articleId}; changePage('article');">${topic.name} - ${article.name}</a>`
+        case "none": return /*html*/`<a href="javascript: ${extrajs}; changeArticle(${articleId}); changePage('article');">${article.name}</a>`;
+        case "above": return /*html*/`<h4>${topic.name}</h4><a href="javascript: ${extrajs}; changeArticle(${articleId}); changePage('article');">${article.name}</a>`;
+        case "inline": return /*html*/`<a href="javascript: ${extrajs}; changeArticle(${articleId}); changePage('article');">${topic.name} - ${article.name}</a>`
         default: throw new Error("Incorrect value passed to createArticleLink");
     }
 }
