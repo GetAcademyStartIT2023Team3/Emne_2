@@ -5,9 +5,8 @@ const model = {
         selectedPage: "main",
         pages: {
             articlePage: {
-                selectedArticle: 1,
-                topicIndex:      1,
-                selectedPage:    1,
+                articleId:   1,
+                articlePageNumber: 1,
             },
             mainPage: {
                 weekId: 1

@@ -1,14 +1,17 @@
 function updateArticleView() {
-    let html = '';
-    html += '<div id="articlePage">';
+    let articleObject = articleModelGetArticleObject();
+    let atomObjects = articleModelGetAtomObjects(articleObject);
 
-    html += renderLeftBox();
-    html += renderMiddleBox();
-    html += renderRightBox();
-    
-    html += '</div>';
+    let article = renderArticleAtoms(atomObjects);
+    let pagination = renderArticlePagination(articleObject);
 
-    return html;
+    return /*html*/ `
+        <div id="articlePage">
+        ${renderLeftBox()}
+        ${renderMiddleBox(article, pagination)}
+        ${renderRightBox()}
+        </div>
+    `;
 }
 
 function renderLeftBox() {
@@ -28,26 +31,16 @@ function renderLeftBox() {
     return html;
 }
 
-function renderMiddleBox() {
+function renderMiddleBox(article, pagination) {
     let html = /*html*/`
         <div id="articlePageMiddleBox">
 
             <div id="articlePageMiddleBoxView">
-                <div style="text-align: center;">---ARTICLE CONTENT---</div>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                <div style="text-align: center;">---ARTICLE CONTENT---</div>
+                ${article}
             </div>
 
             <div id="articlePageMiddleBoxNavigation">
-                <button>◀</button>
-                <button>1</button>
-                <button>2</button>
-                <button>3</button>
-                <button>▶</button>
+                ${pagination}
             </div>
 
         </div>  
@@ -85,4 +78,31 @@ function renderRightBox() {
         </div>
     `;
     return html;
+}
+
+function renderArticleAtoms(atoms) {
+    let html = '';
+    for (const atom of atoms) {
+        html +=
+          (atom.type === 'text')       ? articleAtomText(atom.title, atom.text)
+        : (atom.type === 'imageHTTP')  ? articleAtomImageHTTP(atom.title, atom.text, atom.ref)
+        : (atom.type === 'youtube')    ? articleAtomYoutube(atom.title, atom.text, atom.ref)
+        : (atom.type === 'imageAsset') ? articleAtomImageAsset(atom.title, atom.text, atom.ref)
+        : (atom.type === 'videoAsset') ? articleAtomVideoAsset(atom.title, atom.text, atom.ref)
+        : (atom.type === 'askChoices') ? articleAtomAskChoices(atom.ask, atom.correct, atom.choices)
+        : null;
+    }
+    return html;
+}
+
+function renderArticlePagination(articleObject) {
+    let paginationCount = articleObject.atoms.length;
+    let pageNumber = model.app.pages.articlePage.articlePageNumber;
+    return `
+        <button>◀</button>
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>▶</button>
+    `;
 }
