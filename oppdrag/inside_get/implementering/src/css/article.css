@@ -1,3 +1,4 @@
+/* EVERYTHING IN THE ARTICLE PAGE GOES INSIDE THIS ELEMENT -> #articlePage */
 #articlePage {
     /* holds the 3 main containers for the article page from left: notes-input, article-view and suggested/related-navigation-bar */
     background: var(--color_background);
@@ -8,23 +9,27 @@
     justify-content: center;
 }
 
-#articlePage > div {
+/* NOTES */
+#articlePageLeftBox {
     background: var(--color_foreground);
     padding: 1rem;
-}
-
-#articlePageLeftBox {
     width: 20%;
     display: flex;
     flex-direction: column;
 }
 
+/* ARTICLE */
 #articlePageMiddleBox {
+    background: var(--color_foreground);
+    padding: 1rem;
     width: 65%;
     margin-inline: 1rem;
 }
 
+/* TOPICS + RELATED */
 #articlePageRightBox {
+    background: var(--color_foreground);
+    padding: 1rem;
     width: 15%;
     display: flex;
     flex-direction: column;
