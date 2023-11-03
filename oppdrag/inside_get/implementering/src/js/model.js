@@ -25,19 +25,26 @@ const model = {
 
     },
 
+    fakeUser: {
+        seenArticles: [
+            { articleId: 1, lastSeenPage: 1, isFinished: false, seenDate: "2023-10-15" },
+            { articleId: 2, lastSeenPage: 2, isFinished: false, seenDate: "2023-8-16" }
+        ],
+    },
+
     curriculum: {
         startDate: '2023-08-07',
         weekPlan: [
-            { week: 1,   monday: [4, 3],     tuesday: [2],      wednesday: [2],       thursday: [7, 3],         friday: [4]        },
-            { week: 2,   monday: [],         tuesday: [],       wednesday: [],        thursday: [],             friday: []         },
-            { week: 3,   monday: [5, 1],     tuesday: [7],      wednesday: [6],       thursday: [4, 5],         friday: [6]        },
+            { week: 1, monday: [4, 3], tuesday: [2], wednesday: [2], thursday: [7, 3], friday: [4] },
+            { week: 2, monday: [],     tuesday: [],  wednesday: [],  thursday: [],     friday: []  },
+            { week: 3, monday: [5, 1], tuesday: [7], wednesday: [6], thursday: [4, 5], friday: [6] },
         ],
     },
 
     topics: [
-        { id: 1, name: 'Tekning og læring', description: 'Tenking og læring handler om...'},
+        { id: 1, name: 'Tekning og læring',          description: 'Tenking og læring handler om...'},
         { id: 2, name: 'Samarbeid og kommunikasjon', description: 'Samarbeid og kommunikasjon handler om...' },
-        { id: 3, name: 'Selvledelse og refleksjon', description: 'Selvledelse og refleksjon handler om...' },
+        { id: 3, name: 'Selvledelse og refleksjon',  description: 'Selvledelse og refleksjon handler om...' },
     ],
 
     keywords: [
@@ -51,29 +58,21 @@ const model = {
     ],
 
     keyword_relations: [
-        { idxA:  0, idxB:  3 },
-        { idxA:  0, idxB:  4 },
-        { idxA:  1, idxB:  2 },
-        { idxA:  3, idxB:  5 },
-        { idxA:  0, idxB:  5 },
+        { idxA: 0, idxB: 3 },
+        { idxA: 0, idxB: 4 },
+        { idxA: 1, idxB: 2 },
+        { idxA: 3, idxB: 5 },
+        { idxA: 0, idxB: 5 },
     ],
 
-    fakeUser: {
-        seenArticles: [
-            { articleId: 1, lastSeenPage: 1, isFinished: false, seenDate: "2023-10-15" },
-            { articleId: 2, lastSeenPage: 2, isFinished: false, seenDate: "2023-8-16" }
-        ],
-    },
-
-
     articles: [
-         { id: 1, name: 'Pomodoro',  topicId: 1,  atoms: [[3, 1], [2, 4, 5]],           keywords: [0, 2, 3, 4],       },
-         { id: 2, name: 'Læring',    topicId: 2,  atoms: [[6, 12], [7, 13]],            keywords: [1, 2, 3],          },
-         { id: 3, name: 'Feiling',   topicId: 1,  atoms: [[11, 12]],                    keywords: [0, 3],             },
-         { id: 4, name: 'Samarbeid', topicId: 3,  atoms: [[8, 9, 10]],                  keywords: [0, 10, 11]         },
-         { id: 5, name: 'Test',      topicId: 3,  atoms: [[8, 9, 10]],                  keywords: [0, 12, 13]         },
-         { id: 6, name: 'ABCDEFG',   topicId: 3,  atoms: [[8, 9, 10]],                  keywords: [0, 12]             },
-         { id: 7, name: 'XXXXXXX',   topicId: 3,  atoms: [[8, 9, 10]],                  keywords: [0, 3, 14, 15]      },
+         { id: 1, name: 'Pomodoro',  topicId: 1, atoms: [[3, 1], [2, 4, 5]], keywords: [0, 2, 3, 4],  },
+         { id: 2, name: 'Læring',    topicId: 2, atoms: [[6, 12], [7, 13]],  keywords: [1, 2, 3],     },
+         { id: 3, name: 'Feiling',   topicId: 1, atoms: [[11, 12]],          keywords: [0, 3],        },
+         { id: 4, name: 'Samarbeid', topicId: 3, atoms: [[8, 9, 10]],        keywords: [0, 10, 11]    },
+         { id: 5, name: 'Test',      topicId: 3, atoms: [[8, 9, 10]],        keywords: [0, 12, 13]    },
+         { id: 6, name: 'ABCDEFG',   topicId: 3, atoms: [[8, 9, 10]],        keywords: [0, 12]        },
+         { id: 7, name: 'XXXXXXX',   topicId: 3, atoms: [[8, 9, 10]],        keywords: [0, 3, 14, 15] },
     ],
 
     atoms: [
