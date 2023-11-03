@@ -15,12 +15,12 @@ function updateWeeklyListView() {
         <ul class="w_list">
             <li>
                 <h3 class="w_list_header">Mandag</h3>
-                <div class="w_flex w_middle">
-                    <a href="#">
+                <div class="w_flex">
+                    <a href="#" style="flex: 1">
                         <div class="w_bold">Sammarbeid og kommunkasjon</div>
                         <div>Kommunkasjon</div>
                     </a>
-                    <a href="#">
+                    <a href="#" style="flex: 1">
                         <div class="w_bold">XXXXX</div>
                         <div>XXXXX</div>
                     </a>
@@ -29,11 +29,11 @@ function updateWeeklyListView() {
             <li>
                 <h3>Tirsdag</h3>
                 <div class="w_flex">
-                    <a href="#">
+                    <a href="#" style="flex: 1">
                         <div class="w_bold">Tenknin og læring</div>
                         <div>Nevroplastisitet</div>
                     </a>
-                    <a href="#">
+                    <a href="#" style="flex: 1">
                         <div class="w_bold">XXXXX</div>
                         <div>XXXXX</div>
                     </a>
@@ -42,11 +42,11 @@ function updateWeeklyListView() {
             <li>
                 <h3>Onsdag</h3>
                 <div class="w_flex">
-                    <a href="#">
+                    <a href="#" style="flex: 1">
                         <div class="w_bold">Sammarbeid og kommunkasjon</div>
                         <div>Kritisk tenkning</div>
                     </a>
-                    <a href="#">
+                    <a href="#" style="flex: 1">
                         <div class="w_bold">XXXXX</div>
                         <div>XXXXX</div>
                     </a>
@@ -54,7 +54,7 @@ function updateWeeklyListView() {
             </li>
             <li>
                 <h3>Torsdag</h3>
-                <div class="w_flex">
+                <div class="w_flex" style="flex: 1">
                     <a href="#">
                         <div class="w_bold">Sammarbeid og kommunkasjon</div>
                         <div>Kommunkasjon</div>
@@ -63,7 +63,7 @@ function updateWeeklyListView() {
             </li>
             <li>
                 <h3>Fredag</h3>
-                <div class="w_flex">
+                <div class="w_flex" style="flex: 1">
                     <a href="#">
                         <div class="w_bold">Sammarbeid og kommunkasjon</div>
                         <div>Kommunkasjon</div>
@@ -113,7 +113,7 @@ function updateWeeklySidebarView() {
             </li>
             <li>
                 <a href="#">
-                    <div class="w_bold">Tenknin og læring</div>
+                    <div class="w_bold">Tenkning og læring</div>
                     <div>Nevroplastisitet</div>
                 </a>
             </li>
