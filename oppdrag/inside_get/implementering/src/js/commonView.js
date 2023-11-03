@@ -2,6 +2,7 @@
 
 let getArticle = (id) => { for(let article of model.articles) if (article.id == id) return article; }
 let getTopic = (id) => { for(let topic of model.topics) if(topic.id == id) return topic; }
+let getAtom = (id) => { for (const atom of model.atoms) if (atom.id == id) return atom; }
 
 //Topic style kan være "none", "above" eller "inline"
 function createArticleLink(articleId, topicStyle, extrajs) {

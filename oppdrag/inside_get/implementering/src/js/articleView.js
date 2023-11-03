@@ -1,15 +1,15 @@
 function updateArticleView() {
-    let articleObject = articleModelGetArticleObject();
-    let atomObjects = articleModelGetAtomObjects(articleObject);
+    let articleId = model.app.pages.articlePage.articleId;
+    let articleObject = getArticle(articleId);
 
-    let article = renderArticleAtoms(atomObjects);
+    let article = renderArticleAtoms(articleObject);
     let pagination = renderArticlePagination(articleObject);
 
-    return /*html*/ `
+    return /*html*/`
         <div id="articlePage">
-        ${renderLeftBox()}
-        ${renderMiddleBox(article, pagination)}
-        ${renderRightBox()}
+            ${renderLeftBox()}
+            ${renderMiddleBox(article, pagination)}
+            ${renderRightBox()}
         </div>
     `;
 }
@@ -80,9 +80,12 @@ function renderRightBox() {
     return html;
 }
 
-function renderArticleAtoms(atoms) {
+function renderArticleAtoms(articleObject) {
     let html = '';
-    for (const atom of atoms) {
+    let pageNumber = model.app.pages.articlePage.articlePageNumber;
+    let atomIndexes = articleObject.atoms[pageNumber-1];
+    for (const atomIndex of atomIndexes) {
+        let atom = getAtom(atomIndex);
         html +=
           (atom.type === 'text')       ? articleAtomText(atom.title, atom.text)
         : (atom.type === 'imageHTTP')  ? articleAtomImageHTTP(atom.title, atom.text, atom.ref)
