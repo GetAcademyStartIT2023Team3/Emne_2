@@ -1,7 +1,5 @@
-let views;
-let graph; 
-//Inneholder instance av "Graph" classen fra graphView.js
-//
+let views; // Brukes i updateView() -> view.js for å sende deg til riktig view.
+let graph; // Inneholder instance av "Graph" classen fra graphView.js
 
 function main() {
     views = {
@@ -18,25 +16,24 @@ function main() {
     else invalidQuery(searchParams);
 }
 
-
 function selectPage(page) {
     // legg til query string i URL, for eksempel "index.html?page=article" for å gå rett til article siden.
     model.app.selectedPage = page;
     updateView();
 }
 
-
 function test(test) {
     // lag en funksjon i test.js
     // For eksempel articleTest()
-    // Du kan nå kjøre denne funksjonen ved å skrive i URL: index.html?test=articleTest
+    // Du kan nå kjøre denne funksjonen ved å skrive i URL: index.html?test=articleTest.
     eval(`${test}()`);
     updateView();
 }
 
 function invalidQuery(searchParams) {
     let doc = document.getElementById("app");
+    doc.innerHTML = '<h1>Invalid Query String(s)</h1>';
     for (const [key, value] of searchParams.entries()) {
-        doc.innerHTML += `${key}: ${value}`;
+        doc.innerHTML += `<p>${key}=${value}</p>`;
     }
 }
