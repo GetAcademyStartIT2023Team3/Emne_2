@@ -1,8 +1,11 @@
 function testArticle() {
     model.app.selectedPage = "article";
-    model.app.pages.articlePage.selectedArticle = 1;
-    model.app.pages.articlePage.topicIndex = 1;
-    model.app.pages.articlePage.selectedPage = 1;
+    addArticleDummyDataV1();
+    console.log(model.atoms[0].title);
+    console.log(model.atoms[0].text);
+    // model.app.pages.articlePage.selectedArticle = 1;
+    // model.app.pages.articlePage.topicIndex = 1;
+    // model.app.pages.articlePage.selectedPage = 1;
 }
 
 function testGraph() {
