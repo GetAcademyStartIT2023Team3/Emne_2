@@ -105,25 +105,46 @@ function updateWeeklySidebarView() {
     <div class="w_sidebar w_center">
         <h2 class="w_header">Nyeste lest</h2>
         <ul class="w_list w_alternating">
-            <li>
-                <a href="#">
-                    <div class="w_bold">Sammarbeid og kommunkasjon</div>
-                    <div>Kommunkasjon</div>
-                </a> 
-            </li>
-            <li>
-                <a href="#">
-                    <div class="w_bold">Tenkning og læring</div>
-                    <div>Nevroplastisitet</div>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <div class="w_bold">Sammarbeid og kommunkasjon</div>
-                    <div>Kritisk Tenkning</div>
-                </a>
-            </li>            
+            ${generateLatestReadArticles()}
         </ul>
     </div>`;
     return html;
+}
+
+function generateLatestReadArticles() {
+    let latestReadArticlesHTML = '';
+
+    let sortedSeenArticles = [...model.fakeUser.seenArticles];
+    
+    sortedSeenArticles.sort((a, b) => new Date(b.seenDate) - new Date(a.seenDate));
+
+    for (let i = 0; i < sortedSeenArticles.length; i++) {
+        let seenArticle = sortedSeenArticles[i];
+        let articleId = seenArticle.articleId;
+
+        for (let j = 0; j < model.articles.length; j++) {
+            let article = model.articles[j];
+
+            if (article.id === articleId) {
+                let topicId = article.topicId;
+
+                for (let k = 0; k < model.topics.length; k++) {
+                    let topic = model.topics[k];
+
+                    if (topic.id === topicId) {
+                        latestReadArticlesHTML += /*HTML*/`
+                            <li>
+                                <a href="#">
+                                    <div class="w_bold">${topic.name}</div>
+                                    <div>${article.name}</div>
+                                </a>
+                            </li>
+                        `;
+                        break;
+                    }
+                }
+            }
+        }
+    }
+    return latestReadArticlesHTML;
 }

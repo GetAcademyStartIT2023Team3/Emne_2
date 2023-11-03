@@ -28,7 +28,9 @@ const model = {
     fakeUser: {
         seenArticles: [
             { articleId: 1, lastSeenPage: 1, isFinished: false, seenDate: "2023-10-15" },
-            { articleId: 2, lastSeenPage: 2, isFinished: false, seenDate: "2023-8-16" }
+            { articleId: 2, lastSeenPage: 2, isFinished: false, seenDate: "2023-9-16" },
+            { articleId: 4, lastSeenPage: 2, isFinished: false, seenDate: "2023-8-16" },
+            { articleId: 6, lastSeenPage: 1, isFinished: false, seenDate: "2023-11-03" },
         ],
     },
 
