@@ -5,7 +5,6 @@ function changePage(pageId) {
 
 function changeArticle(articleId) {
     let articlePage = model.app.pages.articlePage;
-    articlePage.selectedArticle = articleId;
-    articlePage.selectedPage = 1;
-    articlePage.topicIndex = getArticle(articleId).topicId;
+    articlePage.articleId = articleId;
+    articlePage.articlePageNumber = 1;
 }
