@@ -1,11 +1,8 @@
-function testArticle() {
+function testArticleId1() {
     model.app.selectedPage = "article";
-    addArticleDummyDataV1();
-    console.log(model.atoms[0].title);
-    console.log(model.atoms[0].text);
-    // model.app.pages.articlePage.selectedArticle = 1;
-    // model.app.pages.articlePage.topicIndex = 1;
-    // model.app.pages.articlePage.selectedPage = 1;
+    addArticleDummyDataId1();
+    model.app.pages.articlePage.articleId = 1;
+    model.app.pages.articlePage.articlePageNumber = 1;
 }
 
 function testGraph() {
