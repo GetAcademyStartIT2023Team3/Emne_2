@@ -1,5 +1,22 @@
 "use strict";
 
+let getArticle = (id) => { for(let article of model.articles) if (article.id == id) return article; }
+let getTopic = (id) => { for(let topic of model.topics) if(topic.id == id) return topic; }
+
+//Topic style kan være "none", "above" eller "inline"
+function createArticleLink(articleId, topicStyle, extrajs) {
+    let article = getArticle(articleId);
+    let topic = getTopic(article.topicId);
+    if(!extrajs) extrajs = "";
+    
+    switch(topicStyle) {
+        case "none": return /*html*/`<a href="javascript: ${extrajs}; model.app.pages.articlePage.selectedArticle = ${articleId}; changePage('article');">${article.name}</a>`;
+        case "above": return /*html*/`<h4>${topic.name}</h4><a href="javascript: ${extrajs}; model.app.pages.articlePage.selectedArticle = ${articleId}; changePage('article');">${article.name}</a>`;
+        case "inline": return /*html*/`<a href="javascript: ${extrajs}; model.app.pages.articlePage.selectedArticle = ${articleId}; changePage('article');">${topic.name} - ${article.name}</a>`
+        default: throw new Error("Incorrect value passed to createArticleLink");
+    }
+}
+
 function createTopbarHtml() {
     function createLinkHtml(text, page) {
         return model.app.selectedPage != page ? /*html*/`<a href="javascript: changePage('${page}')">${text}</a>` : `${text}`;

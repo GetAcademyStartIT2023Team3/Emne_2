@@ -155,7 +155,7 @@ function updateRelatedSubview() {
     let related = document.getElementById("related");
     let listHtml = "";
     for(let article of model.articles) if(article.keywords.some((e) => e == selected)) {
-        listHtml += /*html*/`<li><a href="javascript: graph = null; changePage('article'); model.app.pages.articlePage.selectedArticle = ${article.id}; updateView();">${article.name}</a></li>`;
+        listHtml += /*html*/`<li>${createArticleLink(article.id, "none", "graph = null")}</li>`;
     }
     related.innerHTML = /*html*/`
         <div class="container">

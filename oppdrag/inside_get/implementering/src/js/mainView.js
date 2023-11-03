@@ -1,6 +1,4 @@
 function updateMainView() {
-    let getArticle = (id) => { for(let article of model.articles) if (article.id == id) return article; }
-    let getTopic = (id) => { console.log(id); for(let topic of model.topics) if(topic.id == id) return topic; }
 
     let mainHtml = "";
     for(let topic of model.topics) {
@@ -22,7 +20,7 @@ function updateMainView() {
         for(let [NO, EN] of Object.entries(days)) {
             weekHtml += /*html*/`${NO}:<div class="vflex">`;
             
-            for(let article of week[EN]) weekHtml += /*html*/`<a href="">${getTopic(getArticle(article).topicId).name} - ${getArticle(article).name}</a>`;
+            for(let article of week[EN]) weekHtml += /*html*/`${createArticleLink(article, "inline")}`;
             weekHtml += /*html*/`</div>`;
         }
     }
@@ -31,7 +29,7 @@ function updateMainView() {
     let lastSeen = model.fakeUser.seenArticles.toSorted(comp);
     if(lastSeen.length > 10) lastSeen.length = 10;
     for(let seen of lastSeen) {
-        recentHtml += /*html*/`<div>${getTopic(getArticle(seen.articleId).topicId).name} - <a href="">${getArticle(seen.articleId).name}</a></div>`;
+        recentHtml += /*html*/`<div>${createArticleLink(seen.articleId, "above")}</div>`;
     }
     return /*html*/`
         <div class="hflex center">
