@@ -1,11 +1,14 @@
 function articleAtomText(title=null, text=null) {
     if (text === null) throw new Error("articleAtomText() - text has no value");
+
     if (title === null) {
-        // render only text
-    } else {
-        // render title & text
+        return `<p>${text}</p>`;
     }
-    return '<p>articleAtomText()</p>';
+
+    return `
+        <h1>${title}</h1>
+        <p>${text}</p>
+    `;
 }
 
 function articleAtomImageHTTP(title=null, text=null, ref=null) {
@@ -20,7 +23,37 @@ function articleAtomYoutube(title=null, text=null, ref=null) {
 
 function articleAtomImageAsset(title=null, text=null, ref=null) {
     // ref => ./assets/image/123.png
-    return '<p>articleAtomImageAsset()</p>';
+    if (ref === null) throw new Error("articleAtomImageAsset() - ref has no value");
+
+    if (title === null && text === null) {
+        return `
+            <img src="${ref}">
+        `;
+    }
+
+    if (title !== null && text === null) {
+        return `
+            <h1>${title}</h1>
+            <img src="${ref}">
+        `;
+    }
+
+    if (text !== null && title === null) {
+        return `
+            <figure>
+                <img src="${ref}">
+                <figcaption>${text}</figcaption>
+            </figure>
+        `;
+    }
+
+    return `
+        <h1>${title}</h1>
+        <figure>
+            <img src="${ref}">
+            <figcaption>${text}</figcaption>
+        </figure>
+    `;
 }
 
 function articleAtomVideoAsset(title=null, text=null, ref=null) {

@@ -1,8 +1,10 @@
+// to run a function, visit "index.html?test=<function_name>""
+
 function testArticleId1() {
     model.app.selectedPage = "article";
-    addArticleDummyDataId1();
     model.app.pages.articlePage.articleId = 1;
     model.app.pages.articlePage.articlePageNumber = 1;
+    addArticleDummyDataId1();
 }
 
 function testGraph() {

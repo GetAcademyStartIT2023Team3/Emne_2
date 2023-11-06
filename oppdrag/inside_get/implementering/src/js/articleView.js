@@ -86,6 +86,7 @@ function renderArticleAtoms(articleObject) {
     let atomIndexes = articleObject.atoms[pageNumber-1];
     for (const atomIndex of atomIndexes) {
         let atom = getAtom(atomIndex);
+        console.log('renderArticleAtoms() atom type =', atom.type);
         html +=
           (atom.type === 'text')       ? articleAtomText(atom.title, atom.text)
         : (atom.type === 'imageHTTP')  ? articleAtomImageHTTP(atom.title, atom.text, atom.ref)

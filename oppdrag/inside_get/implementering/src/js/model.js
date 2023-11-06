@@ -77,9 +77,9 @@ const model = {
     ],
 
     atoms: [
-       { id: 1,  type: 'text',        title: 'Aktiv-lytting',     text: 'For løkker er viktig i mange situasjoner. Bla bla..' },
+       { id: 1,  type: 'text',        title: 'Aktiv-lytting',     text: 'Aktiv lytting gjør deg flinkere til å kommunisere. Det er også viktig med tanke på blabla.....' },
        { id: 2,  type: 'imageHTTP',   title: 'Bildetittel',       text: 'dette er et fint motivasjons-bilde',                  ref: 'https://getacademy.no/hubfs/GET_RGB_logo-01-2.png' },
-       { id: 3,  type: 'imageAsset',  title: 'Bildetittel',       text: 'dette er et fint hjerne-bilde',                       ref: './assets/image/123.png' },
+       { id: 3,  type: 'imageAsset',  title: 'En pomodoro tomat', text: 'dette er en pomodoro timer',                          ref: './assets/image/pomodoro_timer.png' },
        { id: 4,  type: 'youtube',     title: 'Filmtittel',        text: 'Mere om pomodoro som ikke ble nevnt i video',         ref: 'youtube.com/dHRQLHaC86c' },
        { id: 5,  type: 'videoAsset',  title: 'Filmtittel',        text: 'Mere om nevroplastisitet som ikke ble nevnt i video', ref: './assets/video/123.mov' },
        { id: 6,  type: 'text',        title: 'Feynman-Teknikken', text: 'Teknikken går ut på å ofte gå gjennom hva du har lært og prøve å forenkle det.' },
