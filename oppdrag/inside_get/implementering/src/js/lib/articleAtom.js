@@ -5,10 +5,12 @@ function articleAtomText(title=null, text=null) {
         return `<p>${text}</p>`;
     }
 
-    return `
-        <h1>${title}</h1>
-        <p>${text}</p>
-    `;
+    if (title !== null) {
+        return `
+            <h1>${title}</h1>
+            <p>${text}</p>
+        `;
+    }
 }
 
 function articleAtomImageHTTP(title=null, text=null, ref=null) {
@@ -38,7 +40,7 @@ function articleAtomImageAsset(title=null, text=null, ref=null) {
         `;
     }
 
-    if (text !== null && title === null) {
+    if (title === null && text !== null) {
         return `
             <figure>
                 <img src="${ref}">
@@ -47,13 +49,15 @@ function articleAtomImageAsset(title=null, text=null, ref=null) {
         `;
     }
 
-    return `
-        <h1>${title}</h1>
-        <figure>
-            <img src="${ref}">
-            <figcaption>${text}</figcaption>
-        </figure>
-    `;
+    if (title !== null && text !== null) {
+        return `
+            <h1>${title}</h1>
+            <figure>
+                <img src="${ref}">
+                <figcaption>${text}</figcaption>
+            </figure>
+        `;
+    }
 }
 
 function articleAtomVideoAsset(title=null, text=null, ref=null) {
