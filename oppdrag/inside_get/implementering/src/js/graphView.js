@@ -104,7 +104,7 @@ class Graph {
             if (rel.idxA == selected) this.oneAway.push(rel.idxB);
             else if (rel.idxB == selected) this.oneAway.push(rel.idxA);
         }
-        for (let rel of model.keyword_relations) if (this.oneAway.some((e) => e == rel.idxA) || this.oneAway.some((e) => e == rel.idxB)) {
+        for(let rel of model.keyword_relations) if(this.oneAway.some((e) => e == rel.idxA) || this.oneAway.some((e) => e == rel.idxB)) {
             this.links.push({ source: rel.idxA, target: rel.idxB });
         }
 
@@ -123,7 +123,7 @@ class Graph {
                 return (t) => {
                     selectedNode.fx = ix(t);
                     selectedNode.fy = iy(t);
-                    this.simulation.alpha(0.5).tick(); // Use 'this' to refer to the class instance
+                    this.simulation.alpha(0.5).tick();
                 };
             });
 
@@ -161,7 +161,7 @@ function updateGraphView() {
             <div class="container" style="flex: 3">
                 <div style="position: relative">
                     <div style="position: absolute; right: 20px;">
-                        <!-- Position relative triks -->Test
+                        <!-- Position relative triks --><input type="text" onchange="textChange(this.value)"/>
                     </div>
                 </div>
                 <svg></svg>
@@ -170,5 +170,15 @@ function updateGraphView() {
             </div>
         </div>
     `;
+}
 
+function textChange(search_string) {
+    let result = fuse.search(search_string);
+    let html = "";
+    for(let r of result) if(r.score < 0.35) {
+        for(let article of model.articles) if(article.keywords.some((e) => e == r.refIndex)) {
+            html += /*html*/`${createArticleLink(article.id, "above", "graph = null")}\n`;
+        }
+    }
+    console.log(html);
 }

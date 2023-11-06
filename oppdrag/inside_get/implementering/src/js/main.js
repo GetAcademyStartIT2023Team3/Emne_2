@@ -1,5 +1,6 @@
 let views; // Brukes i updateView() -> view.js for å sende deg til riktig view.
 let graph; // Inneholder instance av "Graph" classen fra graphView.js
+var fuse = new Fuse(model.keywords.map(obj => obj.name), { includeScore: true });
 
 function main() {
     views = {
@@ -7,6 +8,7 @@ function main() {
         "graph": updateGraphView,
         "weeklySchedule": updateWeeklyScheduleView,
         "article": updateArticleView,
+        "search": updateSearchView,
     };
 
     const searchParams = new URLSearchParams(window.location.search);

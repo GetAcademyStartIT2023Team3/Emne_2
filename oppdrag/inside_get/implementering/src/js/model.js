@@ -13,6 +13,9 @@ const model = {
             },
             graphPage: {
                 selectedKeyword: 0
+            },
+            searchPage: {
+                query: null
             }
         }
     },

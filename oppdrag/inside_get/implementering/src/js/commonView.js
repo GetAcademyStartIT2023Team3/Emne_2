@@ -52,7 +52,7 @@ function createTopbarHtml() {
                 <div class="hflex center">
                     <button>🠈</button>
                     <button>🠊</button>
-                    <input type="text" style="width: 100%"/>
+                    <input type="text" value="${model.app.pages.searchPage.query || ""}" style="width: 100%" onkeydown="search(event,this.value)"/>
                 </div>
             </div>
         </header>
