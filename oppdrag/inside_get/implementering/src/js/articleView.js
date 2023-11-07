@@ -1,10 +1,10 @@
-// find_an_object_in_an_array_by_one_of_its_properties
-// MDN: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find#find_an_object_in_an_array_by_one_of_its_properties
 
 function updateArticleView() {
     const articleId = model.app.pages.articlePage.articleId;
     const pageNumber = model.app.pages.articlePage.articlePageNumber;
-      
+
+    // Find an object in an array by one of its properties.
+    // MDN: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find#find_an_object_in_an_array_by_one_of_its_properties
     const articleObject = model.articles.find(({ id }) => id === articleId);
     const atomIndexes = articleObject.atoms[pageNumber-1];
 
@@ -99,8 +99,12 @@ function renderRightBox() {
 
 function renderArticleAtoms(atomIndexes) {
     let html = '';
-    for (const atomIndex of atomIndexes) {
-        const atom = model.atoms.find(({ id }) => id === atomIndex);
+
+    // Filtering invalid entries from json (or JS-object)
+    // MDN: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter#filtering_invalid_entries_from_json
+    const atoms = model.atoms.filter( ({ id }) => atomIndexes.includes(id) );
+
+    for (const atom of atoms) {
         html +=
           (atom.type === 'text')       ? articleAtomText(atom.title, atom.text)
         : (atom.type === 'imageHTTP')  ? articleAtomImageHTTP(atom.title, atom.text, atom.ref)
@@ -110,6 +114,7 @@ function renderArticleAtoms(atomIndexes) {
         : (atom.type === 'askChoices') ? articleAtomAskChoices(atom.ask, atom.correct, atom.choices)
         : null;
     }
+
     return html;
 }
 
