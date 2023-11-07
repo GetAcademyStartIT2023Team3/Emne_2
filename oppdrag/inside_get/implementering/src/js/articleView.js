@@ -5,11 +5,15 @@ function updateArticleView() {
 
     // Find an object in an array by one of its properties.
     // MDN: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find#find_an_object_in_an_array_by_one_of_its_properties
-    const articleObject = model.articles.find(({ id }) => id === articleId);
+    const articleObject = model.articles.find( ({ id }) => (id === articleId) );
     const atomIndexes = articleObject.atoms[pageNumber-1];
 
+    // Filtering invalid entries from json (or JS-object)
+    // MDN: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter#filtering_invalid_entries_from_json
+    const articleAtoms = model.atoms.filter( ({ id }) => atomIndexes.includes(id) );
+
     const articleName = articleObject.name;
-    const articleContent = renderArticleAtoms(atomIndexes);
+    const articleContent = renderArticleAtoms(articleAtoms);
     const articlePagination = renderArticlePagination(articleObject);
 
     return /*html*/`
@@ -97,25 +101,20 @@ function renderRightBox() {
     return html;
 }
 
-function renderArticleAtoms(atomIndexes) {
+function renderArticleAtoms(articleAtoms) {
     let html = '';
+    articleAtoms.every((atom) => html += renderArticleAtom(atom));
+    return html;
+}
 
-    // Filtering invalid entries from json (or JS-object)
-    // MDN: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter#filtering_invalid_entries_from_json
-    const atoms = model.atoms.filter( ({ id }) => atomIndexes.includes(id) );
-
-    for (const atom of atoms) {
-        html +=
-          (atom.type === 'text')       ? articleAtomText(atom.title, atom.text)
+function renderArticleAtom(atom) {
+    return (atom.type === 'text')      ? articleAtomText(atom.title, atom.text)
         : (atom.type === 'imageHTTP')  ? articleAtomImageHTTP(atom.title, atom.text, atom.ref)
         : (atom.type === 'youtube')    ? articleAtomYoutube(atom.title, atom.text, atom.ref)
         : (atom.type === 'imageAsset') ? articleAtomImageAsset(atom.title, atom.text, atom.ref)
         : (atom.type === 'videoAsset') ? articleAtomVideoAsset(atom.title, atom.text, atom.ref)
         : (atom.type === 'askChoices') ? articleAtomAskChoices(atom.ask, atom.correct, atom.choices)
         : null;
-    }
-
-    return html;
 }
 
 function renderArticlePagination(articleObject) {
