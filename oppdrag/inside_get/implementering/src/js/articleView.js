@@ -1,10 +1,16 @@
-function updateArticleView() {
-    let articleId = model.app.pages.articlePage.articleId;
-    let articleObject = getArticle(articleId);
+// find_an_object_in_an_array_by_one_of_its_properties
+// MDN: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find#find_an_object_in_an_array_by_one_of_its_properties
 
-    let articleName = articleObject.name;
-    let articleContent = renderArticleAtoms(articleObject);
-    let articlePagination = renderArticlePagination(articleObject);
+function updateArticleView() {
+    const articleId = model.app.pages.articlePage.articleId;
+    const pageNumber = model.app.pages.articlePage.articlePageNumber;
+      
+    const articleObject = model.articles.find(({ id }) => id === articleId);
+    const atomIndexes = articleObject.atoms[pageNumber-1];
+
+    const articleName = articleObject.name;
+    const articleContent = renderArticleAtoms(atomIndexes);
+    const articlePagination = renderArticlePagination(articleObject);
 
     return /*html*/`
         <div id="articlePage">
@@ -91,13 +97,10 @@ function renderRightBox() {
     return html;
 }
 
-function renderArticleAtoms(articleObject) {
+function renderArticleAtoms(atomIndexes) {
     let html = '';
-    let pageNumber = model.app.pages.articlePage.articlePageNumber;
-    let atomIndexes = articleObject.atoms[pageNumber-1];
     for (const atomIndex of atomIndexes) {
-        let atom = getAtom(atomIndex);
-        console.log('renderArticleAtoms() atom type =', atom.type);
+        const atom = model.atoms.find(({ id }) => id === atomIndex);
         html +=
           (atom.type === 'text')       ? articleAtomText(atom.title, atom.text)
         : (atom.type === 'imageHTTP')  ? articleAtomImageHTTP(atom.title, atom.text, atom.ref)
