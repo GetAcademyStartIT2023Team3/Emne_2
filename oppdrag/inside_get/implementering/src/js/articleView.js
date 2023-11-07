@@ -2,13 +2,14 @@ function updateArticleView() {
     let articleId = model.app.pages.articlePage.articleId;
     let articleObject = getArticle(articleId);
 
-    let article = renderArticleAtoms(articleObject);
-    let pagination = renderArticlePagination(articleObject);
+    let articleName = articleObject.name;
+    let articleContent = renderArticleAtoms(articleObject);
+    let articlePagination = renderArticlePagination(articleObject);
 
     return /*html*/`
         <div id="articlePage">
             ${renderLeftBox()}
-            ${renderMiddleBox(article, pagination)}
+            ${renderMiddleBox(articleName, articleContent, articlePagination)}
             ${renderRightBox()}
         </div>
     `;
@@ -31,19 +32,27 @@ function renderLeftBox() {
     return html;
 }
 
-function renderMiddleBox(article, pagination) {
+function renderMiddleBox(articleName, articleContent, articlePagination) {
     let html = /*html*/`
         <div id="articlePageMiddleBox">
 
             <div id="articlePageMiddleBoxView">
-                ${article}
+
+                <div id="articlePageMiddleBoxViewArticleName">
+                    ${articleName}
+                </div>
+
+                <div id="articlePageMiddleBoxViewArticleContent">
+                    ${articleContent}
+                </div>
+
+                <div id="articlePageMiddleBoxNavigation">
+                    ${articlePagination}
+                </div>
+
             </div>
 
-            <div id="articlePageMiddleBoxNavigation">
-                ${pagination}
-            </div>
-
-        </div>  
+        </div>
     `;
     return html;
 }
@@ -52,7 +61,9 @@ function renderRightBox() {
     let html = /*html*/`
         <div id="articlePageRightBox">
 
-            <div>Steder</div>
+            <div id="articlePageRightBoxTitle">
+                Steder
+            </div>
 
             <div id="articlePageRightBoxTopics">
                 <div>
