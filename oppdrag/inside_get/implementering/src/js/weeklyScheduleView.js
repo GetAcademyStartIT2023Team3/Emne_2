@@ -187,20 +187,33 @@ function generateLaarticlesTopicIdListReadArticles() {
     return html;
 }
 
-// Note: Endring som skal gjøres i modell. Ikke oppdatertert endring enda.
-// curriculum: [
-//     {   
-//         id: 1,
-//         startDate: '2023-08-07',
-//         weekPlan: [
-//             { week: 1, monday: [4, 3], tuesday: [2], wednesday: [2], thursday: [7, 3], friday: [4] },
-//             { week: 2, monday: [],     tuesday: [],  wednesday: [],  thursday: [],     friday: []  },
-//             { week: 3, monday: [5, 1], tuesday: [7], wednesday: [6], thursday: [4, 5], friday: [6] },
-//         ],
-//     },
-//     {   
-//         id: 2,
-//         startDate: '2023-11-07',
-//         weekPlan: [],
-//     },
-// ],
+/*
+    Emil
+
+    Vi beholder modellen slik den er.
+        Når det gjelder endring i modellen, model.curriculum så var planen å ha en array med flere ukeplaner.
+        I utgangspunktet så tenkte jeg slik.
+        - Eskil ønsker å ha innhold basert på ukeplan hvor studenten i kull Høst 2023 starter fra dato sånn og sånn.
+        Dette ser vi nå bort i fra for enkelthets skyld også får vi bare tåle at vi ikke kan lagre mer enn en ukeplan om gangen.
+
+
+    Når student går inn på "weeklyScheduleView" så skal ukeplan for den kalender-uken vi er i nå vises.
+        Studenten kan bla gjennom ukene (frem og tilbake).
+        Her må vi konvertere kalender-uke-nummer til ukeplan-uke-nummer.
+
+        Vi tar utgangspunkt i startDate (som er '2023-08-07' i modellen) og finner ukenummer for den datoen.
+        Denne datoen hadde forrøvrig ukenummer 32. 
+        Nå setter vi første uke i ukeplanen (uke 1) til å samsvare med kalenderuken (32) som vi har funnet for startDate.
+        Nå er det bare å ta +1 for hver uke på alle ukenummer for både kalender og ukeplan.
+        Vi ender dermed opp med dette mønsteret.
+            uke 1       kalender-uke 32 => model.curriculum.weekPlan[index_for_week_1].week: 1
+            uke 2 (+1)  kalender-uke 33 => model.curriculum.weekPlan[index_for_week_2].week: 2
+            uke 3 (+2)  kalender-uke 32 => model.curriculum.weekPlan[index_for_week_3].week: 3
+
+
+    Burde vi fulgt kalender-uke istedenfor å starte med uke 1?
+        Kanskje.. tanken bak var at vi kunne bruke en dato for å spesifisere starten på kurset.
+        Vi har brukt model.curriculum.tartDate for dette. Da kan man regne seg frem.
+        Du må veldig gjerne gjøre endringer i modellen om du føler for det
+        eller om det gjør implementering lettere. Det er ikke sikkert at nåværende model er den beste løsningen.
+*/
