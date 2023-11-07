@@ -165,6 +165,7 @@ function updateGraphView() {
                     </div>
                 </div>
                 <svg></svg>
+                <input type="range" min="1" max="20" id="weekSlider" style="width:100%" oninput="slide(this.value)">
             </div>
             <div id="related" class="container" style="flex: 1">
             </div>
@@ -174,7 +175,6 @@ function updateGraphView() {
 
 function filter(search_string) {
     let result = graph_fuse.search(search_string);
-    console.log(result);
     for(let r of result) if(r.score < 0.4) {
         graph.nodes[r.refIndex].fx = 0.0;
         graph.nodes[r.refIndex].fy = 0.0;
@@ -184,4 +184,17 @@ function filter(search_string) {
     }
     graph.simulation.alpha(0.5).restart();
 }
+
+function slide(value) {
+    let week = model.curriculum.weekPlan.find(week => week.week == value);
+    let articles = Array.from(new Set([...week.monday, ...week.tuesday, ...week.wednesday, ...week.thursday, ...week.friday]));
+    let keywords = Array.from(new Set(...model.articles.filter(a => articles.some(id => a.id == id)).map(a => a.keywords)));
+    for(let k of keywords) {
+        graph.nodes[k].fx = 0.0;
+        graph.nodes[k].fy = 0.0;
+        setTimeout(() => {
+            graph.nodes[k].fx = null; graph.nodes[k].fy = null;
+        }, 1000);
+    }
+    graph.simulation.alpha(0.5).restart();
 }
