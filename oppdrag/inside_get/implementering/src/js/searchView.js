@@ -1,14 +1,3 @@
-function textChange(search_string) {
-    let result = fuse.search(search_string);
-    let html = "";
-    for(let r of result) if(r.score < 0.35) {
-        for(let article of model.articles) if(article.keywords.some((e) => e == r.refIndex)) {
-            html += /*html*/`${createArticleLink(article.id, "above", "graph = null")}\n`;
-        }
-    }
-    console.log(html);
-}
-
 function search(event, query) {
     if(event.key == "Enter") {
         model.app.selectedPage = "search";
@@ -19,9 +8,9 @@ function search(event, query) {
 
 function updateSearchView() {
     let searchHtml = "";
-    let result = fuse.search(model.app.pages.searchPage.query);
-    for(let r of result) if(r.score < 0.5) {
-        for(let article of model.articles) if(article.keywords.some((e) => e == r.refIndex)) {
+    let result = main_fuse.search(model.app.pages.searchPage.query);
+    for(let r of result) if(r.score < 0.6) {
+        for(let article of model.articles) if(article.keywords.some(e => getKeyword(e).name == r.item.keyword) || article.name == r.item.article_name) {
             searchHtml += /*html*/`${createArticleLink(article.id, "above", "graph = null")}\n`;
         }
     }

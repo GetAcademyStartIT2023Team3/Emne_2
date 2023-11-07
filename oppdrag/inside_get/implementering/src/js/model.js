@@ -59,6 +59,10 @@ const model = {
         { name: "Tenkning og Læring" },
         { name: "Attribusjon" },
         { name: "Growth Mindset" },
+        { name: "Martin Seligman" },
+        { name: "Barbara Oakley" },
+        { name: "William Ury" },
+        { name: "Bruce Tuckman" },
     ],
 
     keyword_relations: [
@@ -73,10 +77,10 @@ const model = {
          { id: 1, name: 'Pomodoro',  topicId: 1, atoms: [[3, 1], [2, 4, 5], [4]], keywords: [0, 2, 3, 4],  },
          { id: 2, name: 'Læring',    topicId: 2, atoms: [[6, 12], [7, 13]],  keywords: [1, 2, 3],     },
          { id: 3, name: 'Feiling',   topicId: 1, atoms: [[11, 12]],          keywords: [0, 3],        },
-         { id: 4, name: 'Samarbeid', topicId: 3, atoms: [[8, 9, 10]],        keywords: [0, 10, 11]    },
-         { id: 5, name: 'Test',      topicId: 3, atoms: [[8, 9, 10]],        keywords: [0, 12, 13]    },
-         { id: 6, name: 'ABCDEFG',   topicId: 3, atoms: [[8, 9, 10]],        keywords: [0, 12]        },
-         { id: 7, name: 'XXXXXXX',   topicId: 3, atoms: [[8, 9, 10]],        keywords: [0, 3, 14, 15] },
+         { id: 4, name: 'Samarbeid', topicId: 3, atoms: [[8, 9, 10]],        keywords: [0, 10, 9]    },
+         { id: 5, name: 'Test',      topicId: 3, atoms: [[8, 9, 10]],        keywords: [0, 8, 7]    },
+         { id: 6, name: 'ABCDEFG',   topicId: 3, atoms: [[8, 9, 10]],        keywords: [0, 6]        },
+         { id: 7, name: 'XXXXXXX',   topicId: 3, atoms: [[8, 9, 10]],        keywords: [0, 3, 5, 7] },
     ],
 
     atoms: [

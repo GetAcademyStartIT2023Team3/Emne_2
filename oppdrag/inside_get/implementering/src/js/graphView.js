@@ -161,7 +161,7 @@ function updateGraphView() {
             <div class="container" style="flex: 3">
                 <div style="position: relative">
                     <div style="position: absolute; right: 20px;">
-                        <!-- Position relative triks --><input type="text" onchange="textChange(this.value)"/>
+                        <input type="text" oninput="filter(this.value)"/>
                     </div>
                 </div>
                 <svg></svg>
@@ -172,13 +172,16 @@ function updateGraphView() {
     `;
 }
 
-function textChange(search_string) {
-    let result = fuse.search(search_string);
-    let html = "";
-    for(let r of result) if(r.score < 0.35) {
-        for(let article of model.articles) if(article.keywords.some((e) => e == r.refIndex)) {
-            html += /*html*/`${createArticleLink(article.id, "above", "graph = null")}\n`;
-        }
+function filter(search_string) {
+    let result = graph_fuse.search(search_string);
+    console.log(result);
+    for(let r of result) if(r.score < 0.4) {
+        graph.nodes[r.refIndex].fx = 0.0;
+        graph.nodes[r.refIndex].fy = 0.0;
+        setTimeout(() => {
+            graph.nodes[r.refIndex].fx = null; graph.nodes[r.refIndex].fy = null;
+        }, 1000);
     }
-    console.log(html);
+    graph.simulation.alpha(0.5).restart();
+}
 }

@@ -1,8 +1,9 @@
 "use strict";
 
-let getArticle = (id) => { for(let article of model.articles) if (article.id == id) return article; }
-let getTopic = (id) => { for(let topic of model.topics) if(topic.id == id) return topic; }
-let getAtom = (id) => { for (const atom of model.atoms) if (atom.id == id) return atom; }
+let getArticle = (id) => model.articles.find(obj => obj.id == id);
+let getTopic = (id) => model.topics.find(obj => obj.id == id);
+let getKeyword = (idx) => model.keywords[idx];
+let getAtom = (id) => model.atoms.find(obj => obj.id == id);
 
 //Topic style kan være "none", "above" eller "inline"
 function createArticleLink(articleId, topicStyle, extrajs) {
