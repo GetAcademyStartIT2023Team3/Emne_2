@@ -48,15 +48,15 @@ function renderMiddleBox(articleName, articleContent, articlePagination) {
 
             <div id="articlePageMiddleBoxView">
 
-                <div id="articlePageMiddleBoxViewArticleName">
+                <div id="articlePageMiddleBoxArticleName">
                     ${articleName}
                 </div>
 
-                <div id="articlePageMiddleBoxViewArticleContent">
+                <div id="articlePageMiddleBoxArticleContent">
                     ${articleContent}
                 </div>
 
-                <div id="articlePageMiddleBoxNavigation">
+                <div id="articlePageMiddleBoxPagination">
                     ${articlePagination}
                 </div>
 
@@ -122,13 +122,20 @@ function renderArticleAtom(atom) {
 }
 
 function renderArticlePagination(articleObject) {
-    let paginationCount = articleObject.atoms.length;
-    let pageNumber = model.app.pages.articlePage.articlePageNumber;
-    return `
-        <button>◀</button>
-        <button>1</button>
-        <button>2</button>
-        <button>3</button>
-        <button>▶</button>
-    `;
+    let html = '';
+    let idString = '';
+
+    let maxPage = articleObject.atoms.length;
+    let articlePageNumber = model.app.pages.articlePage.articlePageNumber;
+
+    if (articlePageNumber !== 1) html += `<button onclick="articleControllerPageFlip(${-1});">◀</button>`;
+
+    for (let page = 1; page <= maxPage; page++) {
+        idString = (page === articlePageNumber) ? 'id="articlePageMiddleBoxPaginationSelected"' : '';
+        html += `<button ${idString} onclick="articleControllerPageSelect(${page});">${page}</button>`;
+    }
+
+    if (articlePageNumber !== maxPage) html += `<button onclick="articleControllerPageFlip(${1});">▶</button>`;
+
+    return html;
 }

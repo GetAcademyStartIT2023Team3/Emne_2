@@ -64,19 +64,18 @@
     flex-direction: column;
 }
 
-#articlePageMiddleBox > #articlePageMiddleBoxView > #articlePageMiddleBoxViewArticleName {
+#articlePageMiddleBox > #articlePageMiddleBoxView > #articlePageMiddleBoxArticleName {
     margin-bottom: 1rem;
     padding: 0.5rem 0.5rem;
     text-align: center;
     background: var(--color_background);
 }
 
-#articlePageMiddleBox > #articlePageMiddleBoxView > #articlePageMiddleBoxViewArticleContent {
+#articlePageMiddleBox > #articlePageMiddleBoxView > #articlePageMiddleBoxArticleContent {
     background: var(--color_background);
-
 }
 
-#articlePageMiddleBox > #articlePageMiddleBoxView > #articlePageMiddleBoxNavigation {
+#articlePageMiddleBox > #articlePageMiddleBoxView > #articlePageMiddleBoxPagination {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -84,13 +83,19 @@
     margin-top: 1rem;
 }
 
-#articlePageMiddleBox > #articlePageMiddleBoxView > #articlePageMiddleBoxNavigation > button {
+#articlePageMiddleBox > #articlePageMiddleBoxView > #articlePageMiddleBoxPagination > button {
     height: 1.8rem;
     width: 2rem;
     margin-inline: 0.3rem;
     font-size: 1rem;
     color: var(--color_text);
     background: var(--color_foreground);
+}
+
+#articlePageMiddleBox > #articlePageMiddleBoxView > #articlePageMiddleBoxPagination > #articlePageMiddleBoxPaginationSelected {
+    background: var(--color_light_foreground);
+    /* background: rgb(141, 33, 33); */
+
 }
 
 #articlePageRightBox > div {

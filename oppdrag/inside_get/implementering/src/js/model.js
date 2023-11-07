@@ -70,7 +70,7 @@ const model = {
     ],
 
     articles: [
-         { id: 1, name: 'Pomodoro',  topicId: 1, atoms: [[3, 1], [2, 4, 5]], keywords: [0, 2, 3, 4],  },
+         { id: 1, name: 'Pomodoro',  topicId: 1, atoms: [[3, 1], [2, 4, 5], [4]], keywords: [0, 2, 3, 4],  },
          { id: 2, name: 'Læring',    topicId: 2, atoms: [[6, 12], [7, 13]],  keywords: [1, 2, 3],     },
          { id: 3, name: 'Feiling',   topicId: 1, atoms: [[11, 12]],          keywords: [0, 3],        },
          { id: 4, name: 'Samarbeid', topicId: 3, atoms: [[8, 9, 10]],        keywords: [0, 10, 11]    },
