@@ -208,7 +208,7 @@ function generateLaarticlesTopicIdListReadArticles() {
         Vi ender dermed opp med dette mønsteret.
             uke 1 => kalender-uke 32      => model.curriculum.weekPlan[index_for_week_1].week: 1
             uke 2 => kalender-uke 33 (+1) => model.curriculum.weekPlan[index_for_week_2].week: 2
-            uke 3 => kalender-uke 33 (+2) => model.curriculum.weekPlan[index_for_week_3].week: 3
+            uke 3 => kalender-uke 34 (+2) => model.curriculum.weekPlan[index_for_week_3].week: 3
 
 
     Burde vi fulgt kalender-uke istedenfor å starte med uke 1?
