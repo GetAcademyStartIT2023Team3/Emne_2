@@ -202,13 +202,13 @@ function generateLatestSeenArticles() {
         Her må vi konvertere kalender-uke-nummer til ukeplan-uke-nummer.
 
         Vi tar utgangspunkt i startDate (som er '2023-08-07' i modellen) og finner ukenummer for den datoen.
-        Denne datoen hadde forrøvrig ukenummer 32. 
+        Denne datoen hadde forøvrig ukenummer 32. 
         Nå setter vi første uke i ukeplanen (uke 1) til å samsvare med kalenderuken (32) som vi har funnet for startDate.
         Nå er det bare å ta +1 for hver uke på alle ukenummer for både kalender og ukeplan.
         Vi ender dermed opp med dette mønsteret.
-            uke 1       kalender-uke 32 => model.curriculum.weekPlan[index_for_week_1].week: 1
-            uke 2 (+1)  kalender-uke 33 => model.curriculum.weekPlan[index_for_week_2].week: 2
-            uke 3 (+2)  kalender-uke 32 => model.curriculum.weekPlan[index_for_week_3].week: 3
+            uke 1 => kalender-uke 32      => model.curriculum.weekPlan[index_for_week_1].week: 1
+            uke 2 => kalender-uke 33 (+1) => model.curriculum.weekPlan[index_for_week_2].week: 2
+            uke 3 => kalender-uke 34 (+2) => model.curriculum.weekPlan[index_for_week_3].week: 3
 
 
     Burde vi fulgt kalender-uke istedenfor å starte med uke 1?
