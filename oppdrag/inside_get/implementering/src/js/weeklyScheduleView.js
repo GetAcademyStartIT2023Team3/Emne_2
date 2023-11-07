@@ -145,13 +145,13 @@ function updateWeeklySidebarView() {
     <div class="w_sidebar w_center">
         <h2 class="w_header">Nyeste lest</h2>
         <ul class="w_list w_alternating">
-            ${generateLaarticlesTopicIdListReadArticles()}
+            ${generateLatestSeenArticles()}
         </ul>
     </div>`;
     return html;
 }
 
-function generateLaarticlesTopicIdListReadArticles() {
+function generateLatestSeenArticles() {
     let html = '';
     let sortedSeenArticles = [...model.fakeUser.seenArticles];
 
