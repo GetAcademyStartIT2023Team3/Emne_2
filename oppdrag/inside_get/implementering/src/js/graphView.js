@@ -184,8 +184,6 @@ function filter(search_string) {
     }
     graph.simulation.alpha(0.5).restart();
 }
-<<<<<<< HEAD
-=======
 
 function slide(value) {
     let week = model.curriculum.weekPlan.find(week => week.week == value);
@@ -200,4 +198,3 @@ function slide(value) {
     }
     graph.simulation.alpha(0.5).restart();
 }
->>>>>>> 9e8b80401864c2a49efd0eb312d7ede26ab03f25
