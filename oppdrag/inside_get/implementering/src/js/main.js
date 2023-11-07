@@ -1,6 +1,15 @@
 let views; // Brukes i updateView() -> view.js for å sende deg til riktig view.
 let graph; // Inneholder instance av "Graph" classen fra graphView.js
-var fuse = new Fuse(model.keywords.map(obj => obj.name), { includeScore: true });
+var graph_fuse = new Fuse(model.keywords.map(obj => obj.name), { includeScore: true, minMatchCharLength: 3 });
+var main_fuse = new Fuse([
+        ...model.keywords.map(obj => ({ keyword: obj.name })),
+        ...model.articles.map(obj => ({ article_name: obj.name }))
+    ], { 
+        keys: [
+            { name: "keyword", weight: 0.3 },
+            { name: "article_name", weight: 0.7 },
+        ], includeScore: true , minMatchCharLength: 3
+});
 
 function main() {
     views = {
