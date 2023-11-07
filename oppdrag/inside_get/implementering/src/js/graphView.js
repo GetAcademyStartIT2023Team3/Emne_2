@@ -184,4 +184,3 @@ function filter(search_string) {
     }
     graph.simulation.alpha(0.5).restart();
 }
-}

@@ -16,6 +16,9 @@ const model = {
             },
             searchPage: {
                 query: null
+            },
+            weeklySchedulePage: {
+                currentWeek: 1,
             }
         }
     },
@@ -36,14 +39,14 @@ const model = {
         ],
     },
 
-    curriculum: {
-        startDate: '2023-08-07',
-        weekPlan: [
-            { week: 1, monday: [4, 3], tuesday: [2], wednesday: [2], thursday: [7, 3], friday: [4] },
-            { week: 2, monday: [],     tuesday: [],  wednesday: [],  thursday: [],     friday: []  },
-            { week: 3, monday: [5, 1], tuesday: [7], wednesday: [6], thursday: [4, 5], friday: [6] },
-        ],
-    },
+    curriculum: {   
+            startDate: '2023-08-07',
+            weekPlan: [
+                { week: 1, monday: [4, 3], tuesday: [2], wednesday: [2], thursday: [7, 3], friday: [4] },
+                { week: 2, monday: [],     tuesday: [],  wednesday: [],  thursday: [],     friday: []  },
+                { week: 3, monday: [5, 1], tuesday: [7], wednesday: [6], thursday: [4, 5], friday: [6] },
+            ],
+        },
 
     topics: [
         { id: 1, name: 'Tekning og læring',          description: 'Tenking og læring handler om...'},

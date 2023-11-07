@@ -44,6 +44,11 @@ a {
     flex-direction: column;
 }
 
+.w_list_header {
+    background-color: var(--color_light_foreground);
+    padding: 0.5rem;
+}
+
 /* --- NAVBAR --- */
 .w_content_box-2 {
     flex: 1;
