@@ -103,7 +103,11 @@ function renderRightBox() {
 
 function renderArticleAtoms(articleAtoms) {
     let html = '';
+
+    // For all objects in array, call function.
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every
     articleAtoms.every((atom) => html += renderArticleAtom(atom));
+
     return html;
 }
 
