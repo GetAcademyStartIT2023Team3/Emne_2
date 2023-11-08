@@ -18,25 +18,31 @@ function updateArticleView() {
 
     return /*html*/`
         <div id="articlePage">
-            ${renderLeftBox()}
-            ${renderMiddleBox(articleName, articleContent, articlePagination)}
-            ${renderRightBox()}
+
+            <div id="articlePageLeftBox">
+                ${renderLeftBox()}
+            </div>
+
+            <div id="articlePageMiddleBox">
+                ${renderMiddleBox(articleName, articleContent, articlePagination)}
+            </div>
+
+            <div id="articlePageRightBox">
+                ${renderRightBox()}
+            </div>
+
         </div>
     `;
 }
 
 function renderLeftBox() {
     let html = /*html*/`
-        <div id="articlePageLeftBox">
+        <div id="articlePageLeftBoxTitle">
+            Notater
+        </div>
 
-            <div id="articlePageLeftBoxTitle">
-                Notater
-            </div>
-
-            <div id="articlePageLeftBoxInput">
-                <textarea>Notater skrives her</textarea>
-            </div>
-
+        <div id="articlePageLeftBoxInput">
+            <textarea>Notater skrives her</textarea>
         </div>
     `;
     return html;
@@ -44,24 +50,16 @@ function renderLeftBox() {
 
 function renderMiddleBox(articleName, articleContent, articlePagination) {
     let html = /*html*/`
-        <div id="articlePageMiddleBox">
+        <div id="articlePageMiddleBoxArticleName">
+            ${articleName}
+        </div>
 
-            <div id="articlePageMiddleBoxView">
+        <div id="articlePageMiddleBoxArticleContent">
+            ${articleContent}
+        </div>
 
-                <div id="articlePageMiddleBoxArticleName">
-                    ${articleName}
-                </div>
-
-                <div id="articlePageMiddleBoxArticleContent">
-                    ${articleContent}
-                </div>
-
-                <div id="articlePageMiddleBoxPagination">
-                    ${articlePagination}
-                </div>
-
-            </div>
-
+        <div id="articlePageMiddleBoxPagination">
+            ${articlePagination}
         </div>
     `;
     return html;
@@ -69,33 +67,29 @@ function renderMiddleBox(articleName, articleContent, articlePagination) {
 
 function renderRightBox() {
     let html = /*html*/`
-        <div id="articlePageRightBox">
+        <div id="articlePageRightBoxTitle">
+            Steder
+        </div>
 
-            <div id="articlePageRightBoxTitle">
-                Steder
+        <div id="articlePageRightBoxTopics">
+            <div>
+                Sammarbeid og kommunikasjon
+                <ul>
+                    <li><a href="">Problemløsning</a></li>
+                    <li><a href="">Læring</a></li>
+                    <li><a href="">Pomodoro</a></li>
+                </ul>
             </div>
+        </div>
 
-            <div id="articlePageRightBoxTopics">
-                <div>
-                    Sammarbeid og kommunikasjon
-                    <ul>
-                        <li><a href="">Problemløsning</a></li>
-                        <li><a href="">Læring</a></li>
-                        <li><a href="">Pomodoro</a></li>
-                    </ul>
-                </div>
+        <div id="articlePageRightBoxRelatedArticles">
+            <div>
+                Relaterte Artikler
+                <ul>
+                    <li><a href="">Focused/diffused mindset</a></li>
+                    <li><a href="">Pomodoro</a></li>
+                </ul>
             </div>
-
-            <div id="articlePageRightBoxRelatedArticles">
-                <div>
-                    Relaterte Artikler
-                    <ul>
-                        <li><a href="">Focused/diffused mindset</a></li>
-                        <li><a href="">Pomodoro</a></li>
-                    </ul>
-                </div>
-            </div>
-
         </div>
     `;
     return html;
@@ -106,7 +100,7 @@ function renderArticleAtoms(articleAtoms) {
 
     // For all objects in array, call function.
     // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every
-    articleAtoms.every((atom) => html += renderArticleAtom(atom));
+    articleAtoms.every((atomObject) => html += renderArticleAtom(atomObject));
 
     return html;
 }

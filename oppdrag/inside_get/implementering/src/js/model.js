@@ -3,6 +3,9 @@
 const model = {
     app: {
         selectedPage: "main",
+        settings: {
+            locale: 'no-NO',
+        },
         pages: {
             articlePage: {
                 articleId:   1,
@@ -32,10 +35,10 @@ const model = {
 
     fakeUser: {
         seenArticles: [
-            { articleId: 1, lastSeenPage: 1, isFinished: false, seenDate: "2023-10-15" },
-            { articleId: 2, lastSeenPage: 2, isFinished: false, seenDate: "2023-9-16" },
-            { articleId: 4, lastSeenPage: 2, isFinished: false, seenDate: "2023-8-16" },
-            { articleId: 6, lastSeenPage: 1, isFinished: false, seenDate: "2023-11-03" },
+            { articleId: 1, lastSeenPage: 1, isFinished: false, date: "2023-8-15"  },
+            { articleId: 2, lastSeenPage: 2, isFinished: true, date: "2023-9-16"  },
+            { articleId: 4, lastSeenPage: 2, isFinished: false, date: "2023-10-16"  },
+            { articleId: 6, lastSeenPage: 1, isFinished: false, date: "2023-11-03" },
         ],
     },
 
@@ -98,6 +101,8 @@ const model = {
        { id: 9,  type: 'text',        title: 'Parafrasering',     text: 'Man kan vise at man lytter ved å parafrasere det som ble sagt. Blabla..' },
        { id: 10, type: 'imageAsset',  title: 'Pause Eskil',       text: 'Eskil må huske å ta pause fra jobbinga ',             ref: './assets/image/pauseEskil.png' },
        { id: 11, type: 'askChoices',  ask: 'hva er et "growth mindset"?', correct: 1, choices: ['tanken om at evner gror av seg selv', 'tanken om at du kan bli bedre på noe hvis du prøver', 'å tenke at alle er bedre enn deg'] },
+       { id: 12, type: null },
+       { id: 13, type: null },
     ],
 }
 

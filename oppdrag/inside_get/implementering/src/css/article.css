@@ -24,6 +24,8 @@
     padding: 1rem;
     width: 65%;
     margin-inline: 1rem;
+    display: flex;
+    flex-direction: column;
 }
 
 /* TOPICS + RELATED */
@@ -58,24 +60,18 @@
     resize: none;
 }
 
-#articlePageMiddleBox > #articlePageMiddleBoxView {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-#articlePageMiddleBox > #articlePageMiddleBoxView > #articlePageMiddleBoxArticleName {
+#articlePageMiddleBox > #articlePageMiddleBoxArticleName {
     margin-bottom: 1rem;
     padding: 0.5rem 0.5rem;
     text-align: center;
     background: var(--color_background);
 }
 
-#articlePageMiddleBox > #articlePageMiddleBoxView > #articlePageMiddleBoxArticleContent {
+#articlePageMiddleBox > #articlePageMiddleBoxArticleContent {
     background: var(--color_background);
 }
 
-#articlePageMiddleBox > #articlePageMiddleBoxView > #articlePageMiddleBoxPagination {
+#articlePageMiddleBox > #articlePageMiddleBoxPagination {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -83,7 +79,7 @@
     margin-top: 1rem;
 }
 
-#articlePageMiddleBox > #articlePageMiddleBoxView > #articlePageMiddleBoxPagination > button {
+#articlePageMiddleBox > #articlePageMiddleBoxPagination > button {
     height: 1.8rem;
     width: 2rem;
     margin-inline: 0.3rem;
@@ -92,10 +88,8 @@
     background: var(--color_foreground);
 }
 
-#articlePageMiddleBox > #articlePageMiddleBoxView > #articlePageMiddleBoxPagination > #articlePageMiddleBoxPaginationSelected {
+#articlePageMiddleBox > #articlePageMiddleBoxPagination > #articlePageMiddleBoxPaginationSelected {
     background: var(--color_light_foreground);
-    /* background: rgb(141, 33, 33); */
-
 }
 
 #articlePageRightBox > div {

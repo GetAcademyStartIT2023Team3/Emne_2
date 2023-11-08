@@ -23,3 +23,9 @@ function testGraph() {
         model.keyword_relations.push({ idxA: r1, idxB: r2 });
     }
 }
+
+function testWeeklyScheduleV1() {
+    model.app.selectedPage = 'weeklySchedule';
+    model.app.pages.weeklySchedulePage.currentWeek = 3;
+    curriculumDummyDataV1();
+}
