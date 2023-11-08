@@ -8,6 +8,8 @@ function testArticleId1() {
 }
 
 function testGraph() {
+    curriculumDummyDataV1();
+
     model.app.selectedPage = "graph";
 
     for (let i = 0; i < 30; i++) {
