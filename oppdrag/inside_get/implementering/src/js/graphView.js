@@ -5,7 +5,6 @@ class Graph {
         graphPage = model.app.pages.graphPage;
         this.nodes = [];
         this.links = [];
-        this.oneAway = [];
         this.svg = null;
         this.nodeSvg = null;
         this.linkSvg = null;
@@ -18,7 +17,7 @@ class Graph {
             .attr("height", 1000)
             .attr("style", "max-width: 100%; height: auto");
 
-        this.nodes = [...model.keywords];
+        this.nodes = model.keywords.map(keyword => ({ name: keyword.name, color: "var(--color_unfocused)"}));
 
         this.createLinks();
         this.createNodes();
@@ -35,6 +34,37 @@ class Graph {
 
         this.refreshSimulation(graphPage.selectedKeyword);
     }
+
+    calculateDistance(selected, target) {
+        const visited = new Set();
+        const queue = [];
+        const distances = {};
+    
+        queue.push(selected);
+        distances[selected] = 0;
+    
+        while (queue.length > 0) {
+            const currentNode = queue.shift();
+            visited.add(currentNode);
+    
+            for (const relation of model.keyword_relations) {
+                if (relation.idxA === currentNode && !visited.has(relation.idxB)) {
+                    const neighbor = relation.idxB;
+                    queue.push(neighbor);
+                    distances[neighbor] = distances[currentNode] + 1;
+                } else if (relation.idxB === currentNode && !visited.has(relation.idxA)) {
+                    const neighbor = relation.idxA;
+                    queue.push(neighbor);
+                    distances[neighbor] = distances[currentNode] + 1;
+                }
+            }
+        }
+    
+        return distances[target];
+    }
+    
+
+
 
     ticked() {
         this.linkSvg
@@ -56,8 +86,9 @@ class Graph {
             .data(this.links)
             .enter()
             .append("line")
-            .attr("stroke-width", d => 2)
-            .style("stroke", "black");
+            .attr("stroke-width", 2)
+            .attr("stroke-dasharray", d => d.linkStyle)
+            .style("stroke", d => d.color);
     }
 
     createNodes() {
@@ -84,29 +115,40 @@ class Graph {
             .attr("dy", "0.5em")
             .attr("fill", (d, i) => {
                 let selected = graphPage.selectedKeyword;
+                let distance = this.calculateDistance(selected, i);
                 if (i == selected) return "var(--color_getOrange)";
-                else if (this.oneAway.some((e) => e == i)) return "#FF00FF";
-                return "var(--color_links)";
+                if(distance == 1) return "#FF00FF";
+                if(distance == 2) return "#FFFFFF";
+                if(d.color) return d.color;
+                return "var(--color_unfocused)";
             })
-            .on("mouseover", (event, d) => d3.select(event.currentTarget).style("outline", "dotted 3px var(--lightblue)"))
-            .on("mouseout", (event, d) => d3.select(event.currentTarget).style("outline", ""))
             .text((d) => d.name);
     }
 
     refreshSimulation(clicked) {
+        this.nodes[graphPage.selectedKeyword].color = null;
         graphPage.selectedKeyword = clicked;
         updateRelatedSubview();
         let selected = graphPage.selectedKeyword;
         this.links.length = 0;
 
-        this.oneAway = [];
-        for (let rel of model.keyword_relations) {
-            if (rel.idxA == selected) this.oneAway.push(rel.idxB);
-            else if (rel.idxB == selected) this.oneAway.push(rel.idxA);
+        for(let i = 0; i < this.nodes.length; i++) {
+            this.nodes[i].fx = null;
+            this.nodes[i].fy = null;
+
+            const distance = this.calculateDistance(selected, i);
+            if(distance == 1) for (let rel of model.keyword_relations) {
+                if ((rel.idxA === selected && rel.idxB === i) || (rel.idxB === selected && rel.idxA === i)) {
+                    this.links.push({ source: i, target: selected, linkStyle: "0", color: "var(--color_links)" });
+                }
+            }
+    
+            if(distance == 2) for(let rel of model.keyword_relations) {
+                if(i == rel.idxA && this.calculateDistance(selected, rel.idxB) == 1) this.links.push({ source: i, target: rel.idxB, linkStyle: "10", color:"var(--color_text)" });
+                if(i == rel.idxB && this.calculateDistance(selected, rel.idxA) == 1) this.links.push({ source: i, target: rel.idxA, linkStyle: "10", color:"var(--color_text)" });
+            }
         }
-        for(let rel of model.keyword_relations) if(this.oneAway.some((e) => e == rel.idxA) || this.oneAway.some((e) => e == rel.idxB)) {
-            this.links.push({ source: rel.idxA, target: rel.idxB });
-        }
+        this.nodes[selected].color = "var(--color_getOrange)";
 
         for (let i = 0; i < this.nodes.length; i++) {
             this.nodes[i].fx = null;
@@ -165,7 +207,10 @@ function updateGraphView() {
                     </div>
                 </div>
                 <svg></svg>
-                <input type="range" min="1" max="20" id="weekSlider" style="width:100%" oninput="slide(this.value)">
+                <div>
+                <h3 id="uke" style="text-align:center">Uke 1 av 20</h3>
+                <input type="range" value="1" min="1" max="20" id="weekSlider" style="width:100%" oninput="slide(this.value)">
+                </div>
             </div>
             <div id="related" class="container" style="flex: 1">
             </div>
@@ -175,13 +220,12 @@ function updateGraphView() {
 
 function filter(search_string) {
     let result = graph_fuse.search(search_string);
+    for(let g of graph.nodes) g.color = null;
     for(let r of result) if(r.score < 0.4) {
-        graph.nodes[r.refIndex].fx = 0.0;
-        graph.nodes[r.refIndex].fy = 0.0;
-        setTimeout(() => {
-            graph.nodes[r.refIndex].fx = null; graph.nodes[r.refIndex].fy = null;
-        }, 1000);
+        graph.nodes[r.refIndex].color = "#FFFF00";
     }
+    graph.nodeSvg.remove();
+    graph.createNodes();
     graph.simulation.alpha(0.5).restart();
 }
 
@@ -189,12 +233,12 @@ function slide(value) {
     let week = model.curriculum.weekPlan.find(week => week.week == value);
     let articles = Array.from(new Set([...week.monday, ...week.tuesday, ...week.wednesday, ...week.thursday, ...week.friday]));
     let keywords = Array.from(new Set(...model.articles.filter(a => articles.some(id => a.id == id)).map(a => a.keywords)));
+    for(let g of graph.nodes) g.color = null;
     for(let k of keywords) {
-        graph.nodes[k].fx = 0.0;
-        graph.nodes[k].fy = 0.0;
-        setTimeout(() => {
-            graph.nodes[k].fx = null; graph.nodes[k].fy = null;
-        }, 1000);
+        graph.nodes[k].color = "#FFFF00";
     }
+    document.getElementById("uke").innerHTML = `Uke ${value} av 20`;
+    graph.nodeSvg.remove();
+    graph.createNodes();
     graph.simulation.alpha(0.5).restart();
 }
