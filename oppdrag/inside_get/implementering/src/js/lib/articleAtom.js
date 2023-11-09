@@ -29,21 +29,21 @@ function articleAtomImageAsset(title=null, text=null, ref=null) {
 
     if (title === null && text === null) {
         return `
-            <img src="${ref}">
+            <img style="width: 100%" src="${ref}">
         `;
     }
 
     if (title !== null && text === null) {
         return `
             <h1>${title}</h1>
-            <img src="${ref}">
+            <img style="width: 100%" src="${ref}">
         `;
     }
 
     if (title === null && text !== null) {
         return `
             <figure>
-                <img src="${ref}">
+            <img style="width: 100%" src="${ref}">
                 <figcaption>${text}</figcaption>
             </figure>
         `;
@@ -53,7 +53,7 @@ function articleAtomImageAsset(title=null, text=null, ref=null) {
         return `
             <h1>${title}</h1>
             <figure>
-                <img src="${ref}">
+                <img style="width: 100%" src="${ref}">
                 <figcaption>${text}</figcaption>
             </figure>
         `;
