@@ -71,7 +71,7 @@ function generateDaySchedule(articleIdList) {
         const articleObject = model.articles.find( ({ id }) => (id === articleId) );
         const topicObject = model.topics.find( ({ id }) => (id === articleObject.topicId) );
         html += /*HTML*/`
-            <a href="#" style="flex: 1">
+            <a href="javascript: changeArticle(${articleObject.id}); changePage('article')" style="flex: 1">
                 <div class="w_bold">${topicObject.name}</div>
                 <div>${articleObject.name}</div>
             </a>
@@ -131,7 +131,7 @@ function generateLatestSeenArticles() {
                     ${dateHandlerPrettyFormat(userSeenArticleObject.date, model.app.settings.locale)}
                 </div>
 
-                <a href="#">
+                <a href="javascript: changeArticle(${articleObject.id}); model.app.pages.articlePage.articlePageNumber=${userSeenArticleObject.lastSeenPage}; changePage('article')">
                     <div class="w_bold">
                         ${topicObject.name}
                     </div>
