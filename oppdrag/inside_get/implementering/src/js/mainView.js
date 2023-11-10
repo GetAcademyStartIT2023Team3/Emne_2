@@ -4,7 +4,7 @@ function updateMainView() {
     for(let topic of model.topics) {
         mainHtml += /*html*/`<details><summary>${topic.name}</summary><div class="hflex"><div class="vflex">`;
         for(let article of model.articles) if (article.topicId == topic.id) {
-            mainHtml += /*html*/`<a href="">${article.name}</a>`;
+            mainHtml += /*html*/`<a href="javascript: changeArticle(${article.id}); changePage('article')">${article.name}</a>`;
         }
         mainHtml += /*html*/`</div><div class="inset">${topic.description}</div></details>`;
     }
